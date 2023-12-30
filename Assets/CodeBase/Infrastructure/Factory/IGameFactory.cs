@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Hero;
 using Infrastructure.Services;
+using Infrastructure.Services.Persistent;
 using UnityEngine;
 
 namespace Infrastructure.Factory {

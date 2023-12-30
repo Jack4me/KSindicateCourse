@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Hero;
 using Infrastructure.AssetsManagement;
+using Infrastructure.Services.Persistent;
 using UnityEngine;
 
 namespace Infrastructure.Factory {
@@ -40,23 +41,23 @@ namespace Infrastructure.Factory {
             return gameObject;
         }
 
-        private GameObject InstantiateRegister(string Path){
-            GameObject gameObject = _instantiate.Instantiate(Path);
+        private GameObject InstantiateRegister(string path){
+            GameObject gameObject = _instantiate.Instantiate(path);
             RegisterProgressWatcher(gameObject);
             return gameObject;
         }
 
-        private void RegisterProgressWatcher(GameObject Hero){
-            foreach (ISaveProgressReader progressReader in Hero.GetComponentsInChildren<ISaveProgressReader>()){
+        private void RegisterProgressWatcher(GameObject hero){
+            foreach (ISaveProgressReader progressReader in hero.GetComponentsInChildren<ISaveProgressReader>()){
                 Register(progressReader);
             }
         }
 
-        private void Register(ISaveProgressReader ProgressReader){
-            if (ProgressReader is ISaveProgress progressWriter){
+        private void Register(ISaveProgressReader progressReader){
+            if (progressReader is ISaveProgress progressWriter){
                 ProgressWriters.Add(progressWriter);
             }
-            ProgressReaders.Add(ProgressReader);
+            ProgressReaders.Add(progressReader);
         }
     }
 }

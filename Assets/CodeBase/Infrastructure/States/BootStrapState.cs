@@ -1,9 +1,9 @@
-﻿using CodeBase.Services.Input;
-using Infrastructure.AssetsManagement;
+﻿using Infrastructure.AssetsManagement;
 using Infrastructure.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.Persistent;
 using Infrastructure.Services.Persistent.SaveLoad;
+using Services.Input;
 using UnityEngine;
 
 namespace Infrastructure.States {

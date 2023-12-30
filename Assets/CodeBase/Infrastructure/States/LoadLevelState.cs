@@ -1,4 +1,4 @@
-﻿using CodeBase.CameraLogic;
+﻿using CameraLogic;
 using Hero;
 using Infrastructure.Factory;
 using Infrastructure.Services.Persistent;
@@ -53,7 +53,7 @@ namespace Infrastructure.States {
 
         private void InitHud(GameObject Hero){
            GameObject hud =  _gameFactory.CreateHud();
-           hud.GetComponentInChildren<ActorUI>().SetHp(Hero.GetComponent<HeroHealth>());
+           hud.GetComponentInChildren<ActionUI>().SetHp(Hero.GetComponent<HeroHealth>());
                
         }
 

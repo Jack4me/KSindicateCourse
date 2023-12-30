@@ -1,6 +1,6 @@
 ﻿using Data;
 
-namespace Hero {
+namespace Infrastructure.Services.Persistent {
     public interface ISaveProgressReader {
         void LoadProgress(PlayerProgress PlayerProgress);
 

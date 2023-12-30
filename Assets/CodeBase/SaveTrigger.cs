@@ -1,5 +1,4 @@
-﻿using System;
-using Hero;
+﻿
 using Infrastructure.Services;
 using Infrastructure.Services.Persistent.SaveLoad;
 using UnityEngine;
@@ -24,4 +23,6 @@ public class SaveTrigger : MonoBehaviour {
         Gizmos.color = new Color32(30, 200, 30, 130);
         Gizmos.DrawCube(transform.position + boxCollider.center, boxCollider.size);
     }
+
+   
 }

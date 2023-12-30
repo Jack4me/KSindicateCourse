@@ -7,7 +7,9 @@ namespace Infrastructure {
     public class SceneLoader {
         private readonly ICoroutineRunner _coroutineRunner;
 
-        public SceneLoader(ICoroutineRunner CoroutineRunner) => _coroutineRunner = CoroutineRunner;
+        public SceneLoader(ICoroutineRunner CoroutineRunner){
+            _coroutineRunner = CoroutineRunner;
+        }
 
         public void Load(string Name, Action OnLoaded = null){
             _coroutineRunner.StartCoroutine(LoadScene(Name, OnLoaded));

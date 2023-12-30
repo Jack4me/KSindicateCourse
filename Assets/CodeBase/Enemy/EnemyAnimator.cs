@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using CodeBase.Logic;
+using Logic;
 using UnityEngine;
 
-public class EnemyAnimator : MonoBehaviour, IAnimationStateReader
-{
+namespace Enemy {
+  public class EnemyAnimator : MonoBehaviour, IAnimationStateReader
+  {
     private static readonly int _attack = Animator.StringToHash("Attack_1");
     private static readonly int _speed = Animator.StringToHash("Speed");
     private static readonly int _isMoving = Animator.StringToHash("IsMoving");
@@ -66,4 +65,5 @@ public class EnemyAnimator : MonoBehaviour, IAnimationStateReader
       return state;
     }
   }
+}
 

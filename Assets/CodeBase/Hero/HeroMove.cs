@@ -1,6 +1,7 @@
-﻿using CodeBase.Services.Input;
-using Data;
+﻿using Data;
 using Infrastructure.Services;
+using Infrastructure.Services.Persistent;
+using Services.Input;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

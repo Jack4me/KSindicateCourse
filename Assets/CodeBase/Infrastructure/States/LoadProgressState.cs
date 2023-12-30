@@ -31,7 +31,9 @@ namespace Infrastructure.States {
 
         private PlayerProgress NewProgress(){
             var progress = new PlayerProgress("SampleScene");
-            progress.stateHeroHp.maxHp = 100;
+            progress.stateHeroHp.maxHp = 50;
+            progress.HeroStats.Damage = 1f;
+            progress.HeroStats.DamageRadius = 3f;
             progress.stateHeroHp.ResetHp();
             
             

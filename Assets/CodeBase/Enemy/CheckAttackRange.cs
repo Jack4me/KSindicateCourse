@@ -3,10 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemy {
-    [RequireComponent(typeof(Attack))]
+    [RequireComponent(typeof(EnemyAttack))]
     public class CheckAttackRange : MonoBehaviour{
         public TriggerObserver triggerObserver;
-        public Attack attack;
+        public EnemyAttack enemyAttack;
 
         private void Start(){
             triggerObserver.TriggerEnter += OnTriggerEnter;
@@ -14,11 +14,11 @@ namespace Enemy {
         }
 
         private void OnTriggerEnter(Collider Obj){
-            attack.EnableAttack();
+            enemyAttack.EnableAttack();
         }
 
         private void OnTriggerExit(Collider Obj){
-            attack.DisableAttack();
+            enemyAttack.DisableAttack();
             
         }
     }
