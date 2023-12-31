@@ -6,7 +6,6 @@ namespace Hero {
         public Image imageCurrent;
 
         public void SetValue(float Current, float Max){
-            Debug.Log("IMAGE CURRENT");
             imageCurrent.fillAmount = Current / Max;
         }
     }

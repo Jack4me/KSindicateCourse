@@ -22,9 +22,10 @@ namespace Enemy {
         public event Action HealthChanged;
 
         public void TakeDamage(float damage){
+            Debug.Log("HITTTT");
             _currentHp -= damage;
             EnemyAnimator.PlayHit();
-            
+            Debug.Log(_currentHp);
             HealthChanged?.Invoke();
         }
     }

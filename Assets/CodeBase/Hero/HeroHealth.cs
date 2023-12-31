@@ -31,7 +31,6 @@ namespace Hero {
             _playerStateHp = PlayerProgress.stateHeroHp;
             HealthChanged?.Invoke();
 
-            Debug.Log("MAaaaaaaaaX HP" + _playerStateHp.maxHp);
         }
 
         public void UpdateProgress(PlayerProgress PlayerProgress){
@@ -40,15 +39,13 @@ namespace Hero {
         }
 
         public void TakeDamage(float Damage){
-            Debug.Log("Take Damage");
             Debug.Log("CurrentHP" + CurrentHp);
-            Debug.Log("MAX HP" + MaxHp);
+            
             if (CurrentHp <= 0){
                 return;
             }
             CurrentHp -= Damage;
             heroAnimator.PlayHit();
-            Debug.Log("CurrentHP" + CurrentHp);
         }
     }
 }

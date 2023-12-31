@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 7722599050985823824}
   - component: {fileID: 2768160925062129517}
   - component: {fileID: 8490300938899784728}
+  - component: {fileID: 3309573634133827408}
   m_Layer: 0
   m_Name: FreeLichPBR
   m_TagString: Untagged
@@ -589,6 +590,19 @@ MonoBehaviour:
   EnemyHealth: {fileID: 2768160925062129517}
   EnemyAnimator: {fileID: 6260318831308675943}
   DeathFX: {fileID: 100004, guid: fbd75ec4d4a7ec94a86e0a76f82d8792, type: 3}
+--- !u!114 &3309573634133827408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500939411536426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7af239c5d1a5f448b9a67d0664b969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBar: {fileID: 6095055627124789615}
 --- !u!1 &1537370055453520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &41282631492647213
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,7 +1071,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1, z: 0.5}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2715125241030291750
 GameObject:
@@ -1070,7 +1084,7 @@ GameObject:
   - component: {fileID: 6101942289034309736}
   - component: {fileID: 1314361193506223958}
   - component: {fileID: 4344919218545372934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AggroZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,6 +1279,7 @@ GameObject:
   - component: {fileID: 1369817764581024210}
   - component: {fileID: 4449496961853595574}
   - component: {fileID: 1728372006480780210}
+  - component: {fileID: 3601474991349793083}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1337,6 +1352,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!114 &3601474991349793083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888323884122037725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f22ee7896d37b458ac1a70f4d0ae2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7982835274361757293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1451,7 @@ GameObject:
   - component: {fileID: 2864158335055383486}
   - component: {fileID: 2486505200307062677}
   - component: {fileID: 7063742121733199804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

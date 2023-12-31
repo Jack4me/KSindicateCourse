@@ -40,6 +40,7 @@ namespace Hero {
         }
 
         private int Hit(){
+            Debug.Log(StartPoint());
             return Physics.OverlapSphereNonAlloc(StartPoint() + transform.forward,_heroStats.DamageRadius,_hits, _layerMask);
         }
 

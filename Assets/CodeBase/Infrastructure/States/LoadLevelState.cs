@@ -53,7 +53,7 @@ namespace Infrastructure.States {
 
         private void InitHud(GameObject Hero){
            GameObject hud =  _gameFactory.CreateHud();
-           hud.GetComponentInChildren<ActionUI>().SetHp(Hero.GetComponent<HeroHealth>());
+           hud.GetComponentInChildren<ActorUI>().SetHp(Hero.GetComponent<HeroHealth>());
                
         }
 
