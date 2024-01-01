@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 8490300938899784728}
   - component: {fileID: 3309573634133827408}
   m_Layer: 0
-  m_Name: FreeLichPBR
+  m_Name: Lich
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
