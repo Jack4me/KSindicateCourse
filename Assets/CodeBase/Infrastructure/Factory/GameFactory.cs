@@ -53,7 +53,7 @@ namespace Infrastructure.Factory {
             }
         }
 
-        private void Register(ISaveProgressReader progressReader){
+        public void Register(ISaveProgressReader progressReader){
             if (progressReader is ISaveProgress progressWriter){
                 ProgressWriters.Add(progressWriter);
             }

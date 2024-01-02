@@ -4,6 +4,7 @@ using Infrastructure.Factory;
 using Infrastructure.Services.Persistent;
 using UnityEngine;
 using Infrastructure.States;
+using Logic;
 
 namespace Infrastructure.States {
     public class LoadLevelState : ILoadLvlState<string> {
@@ -14,23 +15,37 @@ namespace Infrastructure.States {
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _persistentProgressService;
 
-        public LoadLevelState(GameStateMachine GameStateMachine, SceneLoader SceneLoader, LoadingCurtain Curtain,
-            IGameFactory GameFactory, IPersistentProgressService PersistentProgressService){
-            _gameStateMachine = GameStateMachine;
-            _sceneLoader = SceneLoader;
-            _curtain = Curtain;
-            _gameFactory = GameFactory;
-            _persistentProgressService = PersistentProgressService;
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain curtain,
+            IGameFactory gameFactory, IPersistentProgressService persistentProgressService){
+            _gameStateMachine = gameStateMachine;
+            _sceneLoader = sceneLoader;
+            _curtain = curtain;
+            _gameFactory = gameFactory;
+            _persistentProgressService = persistentProgressService;
         }
 
-        public void Enter(string SceneName){
+        public void Enter(string sceneName){
             _curtain.Show();
             _gameFactory.CleanUp();
-            _sceneLoader.Load(SceneName, OnLoaded);
+            _sceneLoader.Load(sceneName, OnLoaded);
         }
 
         public void Exit(){
             _curtain.Hide();
+        }
+
+        private void InitGameWorld(){
+            InitSpawners();
+            GameObject hero = _gameFactory.CreateHero(At: GameObject.FindWithTag(InitialPoint));
+            InitHud(hero);
+            CameraFollow(hero);
+        }
+
+        private void InitSpawners(){
+            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag("EnemySpawner")){
+                var spawner = spawnerObj.GetComponent<EnemySpawner>();
+                _gameFactory.
+            }
         }
 
         private void OnLoaded(){
@@ -43,12 +58,6 @@ namespace Infrastructure.States {
             foreach (ISaveProgressReader progressReader in _gameFactory.ProgressReaders){
                 progressReader.LoadProgress(_persistentProgressService.Progress);
             }
-        }
-
-        private void InitGameWorld(){
-            GameObject hero = _gameFactory.CreateHero(At: GameObject.FindWithTag(InitialPoint));
-            InitHud(hero);
-            CameraFollow(hero);
         }
 
         private void InitHud(GameObject Hero){
