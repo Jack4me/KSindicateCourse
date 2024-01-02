@@ -10,7 +10,7 @@ namespace Logic {
         public MostersEmun typeMonster;
 
         private string _id;
-        private bool _slain;
+        public bool _slain;
 
         private void Awake(){
             _id = GetComponent<UniqueID>().ID;

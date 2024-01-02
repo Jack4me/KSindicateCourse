@@ -9,6 +9,7 @@ using Logic;
 namespace Infrastructure.States {
     public class LoadLevelState : ILoadLvlState<string> {
         private const string InitialPoint = "InitialPoint";
+        private const string Enemyspawner = "EnemySpawner";
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
@@ -42,9 +43,9 @@ namespace Infrastructure.States {
         }
 
         private void InitSpawners(){
-            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag("EnemySpawner")){
+            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(Enemyspawner)){
                 var spawner = spawnerObj.GetComponent<EnemySpawner>();
-                _gameFactory.
+                _gameFactory.Register(spawner);
             }
         }
 
