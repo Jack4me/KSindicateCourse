@@ -4,6 +4,7 @@ using Infrastructure.Services;
 using Infrastructure.Services.Persistent;
 using Infrastructure.Services.Persistent.SaveLoad;
 using Services.Input;
+using StaticData;
 using UnityEngine;
 
 namespace Infrastructure.States {
@@ -31,10 +32,18 @@ namespace Infrastructure.States {
         private void RegisterServices(){
             _services.RegisterService<IInstantiateProvider>(new InstantiateProvider());
             _services.RegisterService<IInputService>(RegisterInputServices());
-            _services.RegisterService<IPersistentProgressService>(new PersistentProgressService()); 
+            _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
             _services.RegisterService<IGameFactory>(new GameFactory(_services.GetService<IInstantiateProvider>()));
-            _services.RegisterService<ISaveLoadService>(new SaveLoadService(_services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
-           // _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
+            _services.RegisterService<ISaveLoadService>(new SaveLoadService(
+                _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
+            // _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
+            RegisterStaticData();
+        }
+
+        private void RegisterStaticData(){
+            IStaticDataService staticData = new StaticMonstersDataService();
+            staticData.LoadMonsters();
+            _services.RegisterService<IStaticDataService>(staticData);
         }
 
         public void Exit(){
@@ -47,5 +56,4 @@ namespace Infrastructure.States {
                 return new MobileInputService();
         }
     }
-
 }

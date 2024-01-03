@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Logic {
     public class EnemySpawner : MonoBehaviour, ISaveProgress {
-        public MostersEmun typeMonster;
+        public MonsterTypeId typeMonster;
 
         private string _id;
         public bool _slain;
