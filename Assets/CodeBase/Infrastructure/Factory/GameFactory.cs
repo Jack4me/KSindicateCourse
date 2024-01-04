@@ -23,8 +23,8 @@ namespace Infrastructure.Factory {
             _staticData = staticData;
         }
 
-        public GameObject CreateHero(GameObject At){
-            HeroGameObject = InstantiateRegister(AssetPath.HeroPath, At.transform.position);
+        public GameObject CreateHero(GameObject at){
+            HeroGameObject = InstantiateRegister(AssetPath.HeroPath, at.transform.position);
             return HeroGameObject;
         }
 
@@ -35,19 +35,26 @@ namespace Infrastructure.Factory {
             enemyHealth.CurrentHp = dataForMonsters.Hp;
             enemyHealth.MaxHp = dataForMonsters.Hp;
             monster.GetComponent<ActorUI>().SetHp(enemyHealth);
-            
             monster.GetComponent<AgentMoveToPlayer>().SetHeroTransform(HeroGameObject.transform);
             monster.GetComponent<NavMeshAgent>().speed = dataForMonsters.MoveSpeed;
+            monster.GetComponent<RotateToHero>()?.SetHeroTransform(HeroGameObject.transform);
+            var componentInChildren = monster.GetComponentInChildren<LootSpawner>();
+            componentInChildren.Constract(this);
+            
             EnemyAttack enemyAttack = monster.GetComponent<EnemyAttack>();
             enemyAttack.SetHeroTransform(HeroGameObject.transform);
             enemyAttack.damage = dataForMonsters.Damage;
             enemyAttack.Cleavage = dataForMonsters.Cleavage;
             enemyAttack.EffectiveDistance = dataForMonsters.EffectiveDistance;
             
-            monster.GetComponent<RotateToHero>()?.SetHeroTransform(HeroGameObject.transform);
-            
+           
             
             return monster;
+        }
+
+        public GameObject CreateLoot(){
+            
+            return InstantiateRegister(AssetPath.LootPath);
         }
 
         public GameObject CreateHud(){
@@ -59,9 +66,9 @@ namespace Infrastructure.Factory {
             ProgressWriters.Clear();
         }
 
-        private GameObject InstantiateRegister(string Path, Vector3 Position){
-           // GameObject gameObject = _instantiate.Instantiate(path, position);
-            GameObject gameObject = _instantiate.Instantiate(Path);
+        private GameObject InstantiateRegister(string path, Vector3 position){
+            GameObject gameObject = _instantiate.Instantiate(path, position);
+            //GameObject gameObject = _instantiate.Instantiate(path);
 
             RegisterProgressWatcher(gameObject);
             return gameObject;

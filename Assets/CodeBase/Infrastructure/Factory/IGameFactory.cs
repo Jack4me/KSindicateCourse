@@ -15,6 +15,7 @@ namespace Infrastructure.Factory {
         void CleanUp();
         public void Register(ISaveProgressReader progressReader);
         GameObject CreateMonster (MonsterTypeId typeMonster, Transform transform);
+        GameObject CreateLoot();
     }
 
     

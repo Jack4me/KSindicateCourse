@@ -43,6 +43,7 @@ Transform:
   - {fileID: 2864158335055383486}
   - {fileID: 41282631492647213}
   - {fileID: 1369817764581024210}
+  - {fileID: 7344301393726776372}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,10 +156,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 6260318831308675943}
-  AttackCoolDown: 3
-  radius: 1
-  effectiveDistance: 0.5
+  EffectiveDistance: 0.5
+  Cleavage: 1
   damage: 10
+  AttackCoolDown: 3
 --- !u!114 &7722599050985823824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +553,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f22ee7896d37b458ac1a70f4d0ae2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7844424661232517018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7344301393726776372}
+  - component: {fileID: 3869206317127684116}
+  m_Layer: 0
+  m_Name: LootSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7344301393726776372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844424661232517018}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.019862413, y: 1.2154274, z: -0.21598697}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4665124114459090}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3869206317127684116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844424661232517018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0229a85a594b71bfb08ac4f7fd427d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyDeath: {fileID: 8490300938899784728}
 --- !u!1 &7982835274361757293
 GameObject:
   m_ObjectHideFlags: 0
