@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Enemy;
 using Hero;
 using Infrastructure.AssetsManagement;
@@ -16,7 +15,6 @@ namespace Infrastructure.Factory {
         private readonly IStaticDataService _staticData;
         public List<ISaveProgressReader> ProgressReaders{ get; } = new List<ISaveProgressReader>();
         public List<ISaveProgress> ProgressWriters{ get; } = new List<ISaveProgress>();
-        public event Action HeroCreated;
 
         public GameObject HeroGameObject{ get; set; }
 
@@ -27,7 +25,6 @@ namespace Infrastructure.Factory {
 
         public GameObject CreateHero(GameObject At){
             HeroGameObject = InstantiateRegister(AssetPath.HeroPath, At.transform.position);
-            HeroCreated?.Invoke();
             return HeroGameObject;
         }
 
@@ -47,7 +44,7 @@ namespace Infrastructure.Factory {
             enemyAttack.Cleavage = dataForMonsters.Cleavage;
             enemyAttack.EffectiveDistance = dataForMonsters.EffectiveDistance;
             
-            
+            monster.GetComponent<RotateToHero>()?.SetHeroTransform(HeroGameObject.transform);
             
             
             return monster;

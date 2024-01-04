@@ -18,7 +18,12 @@ namespace Enemy {
         }
 
         private void Update(){
-            if ( DistanceToPlayer()){
+            // if ( DistanceToPlayer()){
+            //     navMeshAgent.destination = _heroTransform.position;
+            // }
+            //
+            
+            if ( _heroTransform){
                 navMeshAgent.destination = _heroTransform.position;
             }
         }

@@ -5,20 +5,15 @@ using UnityEngine;
 
 namespace Enemy {
     public class RotateToHero : Follow {
-        private IGameFactory _gameFactory;
         private Transform _heroTransform;
         private Vector3 _positionToLook;
         [SerializeField] private float speed;
 
-        private void Start(){
-            _gameFactory = AllServices.Container.GetService<IGameFactory>();
-            if (HeroExist()){
-                InitializeHeroTransform();
-            }
-            else{
-                _gameFactory.HeroCreated += InitializeHeroTransform;
-            }
+      
+        public void SetHeroTransform(Transform heroTransform){
+            _heroTransform = heroTransform;
         }
+       
 
         private void Update(){
             if (InitializeHero()){
@@ -43,11 +38,6 @@ namespace Enemy {
             _positionToLook = new Vector3(lookAt.x, transform.position.y, lookAt.z);
         }
 
-        private void InitializeHeroTransform(){
-            _heroTransform = _gameFactory.HeroGameObject.transform;
-        }
-
-        private bool HeroExist() => _gameFactory.HeroGameObject != null;
 
         private bool InitializeHero() => _heroTransform != null;
     }

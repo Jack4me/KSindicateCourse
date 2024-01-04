@@ -30,6 +30,7 @@ namespace Infrastructure.States {
         }
 
         private void RegisterServices(){
+            RegisterStaticData();
             _services.RegisterService<IInstantiateProvider>(new InstantiateProvider());
             _services.RegisterService<IInputService>(RegisterInputServices());
             _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
@@ -38,7 +39,6 @@ namespace Infrastructure.States {
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
             // _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
-            RegisterStaticData();
         }
 
         private void RegisterStaticData(){

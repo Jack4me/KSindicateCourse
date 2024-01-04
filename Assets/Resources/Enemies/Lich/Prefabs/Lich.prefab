@@ -542,10 +542,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 6260318831308675943}
-  AttackCoolDown: 3
-  radius: 1
-  effectiveDistance: 0.5
+  EffectiveDistance: 0.5
+  Cleavage: 1
   damage: 10
+  AttackCoolDown: 3
 --- !u!114 &7722599050985823824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,7 +1117,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 8
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &4344919218545372934
 MonoBehaviour:
@@ -1484,7 +1484,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 2
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &7063742121733199804
 MonoBehaviour:
