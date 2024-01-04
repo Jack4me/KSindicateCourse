@@ -13,20 +13,24 @@ namespace Enemy {
         private IGameFactory _gameFactory;
         private Transform _heroTransform;
 
+        public float EffectiveDistance = 0.5f;
+        public float Cleavage = 1f;
+        public float damage = 10;
         public float AttackCoolDown = 3;
         private float _attackCoolDown;
         private bool _isAttaking;
         private int _layerMask;
-        public float radius = 1f;
         private Collider[] _hits = new Collider[1];
-        public float effectiveDistance = 0.5f;
+
         private bool _isAttackActive;
-        [SerializeField] private float damage = 10;
+
+        public void SetHeroTransform(Transform heroTransform){
+            _heroTransform = heroTransform;
+        }
 
         private void Awake(){
             _layerMask = 1 << LayerMask.NameToLayer("Player");
-            _gameFactory = AllServices.Container.GetService<IGameFactory>();
-            _gameFactory.HeroCreated += OnHeroCreated;
+          
         }
 
         private void Update(){
@@ -54,13 +58,13 @@ namespace Enemy {
 
         public void OnAttack(){
             if (Hit(out Collider hit)){
-                PhysicsDebug.DrawDebug(StartPoint(), radius, 1);
+                PhysicsDebug.DrawDebug(StartPoint(), Cleavage, 1);
                 hit.transform.GetComponent<IHealth>().TakeDamage(damage);
             }
         }
 
         private bool Hit(out Collider Hit){
-            int hitCount = Physics.OverlapSphereNonAlloc(StartPoint(), radius, _hits, _layerMask);
+            int hitCount = Physics.OverlapSphereNonAlloc(StartPoint(), Cleavage, _hits, _layerMask);
             //вернёт кол-во коллайдеров с которыми пересеклись
             Hit = _hits.FirstOrDefault();
             return hitCount > 0;
@@ -68,7 +72,7 @@ namespace Enemy {
 
         private Vector3 StartPoint(){
             return new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z) +
-                   Vector3.forward * effectiveDistance;
+                   Vector3.forward * EffectiveDistance;
         }
 
         public void EndAttack(){
@@ -76,7 +80,6 @@ namespace Enemy {
             _isAttaking = false;
         }
 
-        private void OnHeroCreated() => _heroTransform = _gameFactory.HeroGameObject.transform;
 
         public void EnableAttack() => _isAttackActive = true;
 

@@ -16,7 +16,7 @@ namespace StaticData {
             //     .ToDictionary(x=> x.MonsterEnumId, x=>x);
         }
 
-        public MonsterStaticData DataMonsters(MonsterTypeId monsterTypeId){
+        public MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId){
             return _monsters.TryGetValue(monsterTypeId, out MonsterStaticData staticData) ? staticData : null;
         }
     }

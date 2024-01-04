@@ -13,7 +13,9 @@
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/08/knowledge-is-power-master(1)/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/UI/ActorUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/SceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Services/AllServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/Logic/EnemySpawner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/StaticData/MonsterTypeId.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/UI/ActorUI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -32,6 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "settings.editor.splitter.proportion": "0.24120083",
     "vue.rearranger.settings.migration": "true"
@@ -75,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703700174181</updated>
-      <workItem from="1703700181745" duration="74845000" />
+      <workItem from="1703700181745" duration="82792000" />
     </task>
     <servers />
   </component>

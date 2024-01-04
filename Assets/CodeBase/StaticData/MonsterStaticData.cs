@@ -13,6 +13,7 @@ namespace StaticData {
         public int Cleavage;
         [Range(1, 3)]
         public int EffectiveDistance;
+        public int MoveSpeed;
         public GameObject Prefab;
         
     }

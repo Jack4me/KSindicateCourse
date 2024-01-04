@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Hero;
 using Infrastructure.Services;
 using Infrastructure.Services.Persistent;
+using StaticData;
 using UnityEngine;
 
 namespace Infrastructure.Factory {
@@ -16,6 +17,7 @@ namespace Infrastructure.Factory {
         GameObject CreateHud();
         void CleanUp();
         public void Register(ISaveProgressReader progressReader);
+        GameObject CreateMonster (MonsterTypeId typeMonster, Transform transform);
     }
 
     

@@ -33,7 +33,8 @@ namespace Infrastructure.States {
             _services.RegisterService<IInstantiateProvider>(new InstantiateProvider());
             _services.RegisterService<IInputService>(RegisterInputServices());
             _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
-            _services.RegisterService<IGameFactory>(new GameFactory(_services.GetService<IInstantiateProvider>()));
+            _services.RegisterService<IGameFactory>(new GameFactory
+                (_services.GetService<IInstantiateProvider>(), _services.GetService<IStaticDataService>()));
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
             // _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());

@@ -12,7 +12,7 @@ namespace Infrastructure.Services {
         public TService GetService<TService>() where TService : IService{
             return ImplementationServiceHolder<TService>.ServiceInstance;
         }
-
+        
         private static class ImplementationServiceHolder<TService> where TService : IService {
             public static TService ServiceInstance;
         }
