@@ -3,6 +3,7 @@ using Enemy;
 using Hero;
 using Infrastructure.AssetsManagement;
 using Infrastructure.Services.Persistent;
+using Infrastructure.Services.Randomizer;
 using StaticData;
 using Unity.Mathematics;
 using UnityEngine;
@@ -13,14 +14,16 @@ namespace Infrastructure.Factory {
     public class GameFactory : IGameFactory {
         private readonly IInstantiateProvider _instantiate;
         private readonly IStaticDataService _staticData;
+        private readonly IRandomService _random;
         public List<ISaveProgressReader> ProgressReaders{ get; } = new List<ISaveProgressReader>();
         public List<ISaveProgress> ProgressWriters{ get; } = new List<ISaveProgress>();
 
         public GameObject HeroGameObject{ get; set; }
 
-        public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData){
+        public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData, IRandomService random){
             _instantiate = instantiate;
             _staticData = staticData;
+            _random = random;
         }
 
         public GameObject CreateHero(GameObject at){
@@ -38,8 +41,9 @@ namespace Infrastructure.Factory {
             monster.GetComponent<AgentMoveToPlayer>().SetHeroTransform(HeroGameObject.transform);
             monster.GetComponent<NavMeshAgent>().speed = dataForMonsters.MoveSpeed;
             monster.GetComponent<RotateToHero>()?.SetHeroTransform(HeroGameObject.transform);
-            var componentInChildren = monster.GetComponentInChildren<LootSpawner>();
-            componentInChildren.Constract(this);
+            var lootSpawner = monster.GetComponentInChildren<LootSpawner>();
+            lootSpawner.SetLoot(dataForMonsters.MaxLoot, dataForMonsters.MaxLoot);
+            lootSpawner.Constract(this, _random);
             
             EnemyAttack enemyAttack = monster.GetComponent<EnemyAttack>();
             enemyAttack.SetHeroTransform(HeroGameObject.transform);
