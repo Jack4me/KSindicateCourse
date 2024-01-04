@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   MonsterEnumId: 1
-  Hp: 0
-  Damage: 0
-  Cleavage: 0
-  EffectiveDistance: 0
-  MoveSpeed: 0
-  Prefab: {fileID: 0}
+  Hp: 6
+  Damage: 30
+  Cleavage: 1
+  EffectiveDistance: 2
+  MoveSpeed: 2
+  Prefab: {fileID: 5261016488348296696, guid: fef8ee76ba818f84b81b11da6bda5ddf, type: 3}
