@@ -18,4 +18,4 @@ MonoBehaviour:
   Cleavage: 1
   EffectiveDistance: 2
   MoveSpeed: 2
-  Prefab: {fileID: 5261016488348296696, guid: fef8ee76ba818f84b81b11da6bda5ddf, type: 3}
+  Prefab: {fileID: 88765795185312103, guid: fef8ee76ba818f84b81b11da6bda5ddf, type: 3}
