@@ -3,6 +3,10 @@
 namespace Data {
     [Serializable]
     public class LootData {
-        public int Value;
+        public int Collected;
+
+        public void Collect(Loot loot){
+            Collected += loot.Value;
+        }
     }
 }

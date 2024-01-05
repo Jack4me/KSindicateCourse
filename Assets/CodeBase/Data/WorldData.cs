@@ -3,10 +3,11 @@
 namespace Data {
     [Serializable]
     public class WorldData {
+        public LootData LootData;
         public PositionAtLvL positionAtLvL;
 
-        public WorldData(string InitialLevel){
-            positionAtLvL = new PositionAtLvL(InitialLevel);
+        public WorldData(string initialLevel){
+            positionAtLvL = new PositionAtLvL(initialLevel);
         }
     }
 }

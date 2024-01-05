@@ -4,10 +4,14 @@ using UnityEngine;
 
 namespace Enemy {
     public class LootPiece : MonoBehaviour {
-        private LootData _loot;
+        private Loot _loot;
         private bool _picked;
+        private WorldData _worldData;
 
-        public void Initialize(LootData loot){
+        public void Construct(WorldData worldData){
+            _worldData = worldData;
+        }
+        public void Initialize(Loot loot){
             _loot = loot;
         }
 
@@ -20,6 +24,7 @@ namespace Enemy {
                 return;
             } 
             _picked = true;
+            _worldData.LootData.Collect(_loot);
         }
     }
 }
