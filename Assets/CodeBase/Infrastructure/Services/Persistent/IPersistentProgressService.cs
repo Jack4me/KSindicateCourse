@@ -7,8 +7,5 @@ namespace Infrastructure.Services.Persistent {
         
         
     }
-
-    public class DataProgress {
-        
-    }
+    
 }

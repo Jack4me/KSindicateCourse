@@ -15,15 +15,18 @@ namespace Infrastructure.Factory {
         private readonly IInstantiateProvider _instantiate;
         private readonly IStaticDataService _staticData;
         private readonly IRandomService _random;
+        private readonly IPersistentProgressService _persistentProgressService;
         public List<ISaveProgressReader> ProgressReaders{ get; } = new List<ISaveProgressReader>();
         public List<ISaveProgress> ProgressWriters{ get; } = new List<ISaveProgress>();
 
         public GameObject HeroGameObject{ get; set; }
 
-        public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData, IRandomService random){
+        public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData, IRandomService random,
+            IPersistentProgressService persistentProgressService){
             _instantiate = instantiate;
             _staticData = staticData;
             _random = random;
+            _persistentProgressService = persistentProgressService;
         }
 
         public GameObject CreateHero(GameObject at){
@@ -56,9 +59,13 @@ namespace Infrastructure.Factory {
             return monster;
         }
 
-        public GameObject CreateLoot(){
+        public LootPiece CreateLoot(){
             
-            return InstantiateRegister(AssetPath.LootPath);
+               GameObject newLoot = InstantiateRegister(AssetPath.LootPath);
+               LootPiece lootPiece = newLoot.GetComponent<LootPiece>();
+               
+               lootPiece.Construct(_persistentProgressService.Progress.worldData);
+               return lootPiece;
         }
 
         public GameObject CreateHud(){

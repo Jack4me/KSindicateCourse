@@ -18,6 +18,7 @@
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/Logic/EnemySpawner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/StaticData/MonsterTypeId.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/09/knowledge-is-power-5dd184c4c83da215669aff0ac78825a83a3bcb0f/src/KnowledgeIsPower/Assets/CodeBase/UI/ActorUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Enemy/LootPiece.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -84,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703700174181</updated>
-      <workItem from="1703700181745" duration="99865000" />
+      <workItem from="1703700181745" duration="101369000" />
     </task>
     <servers />
   </component>
