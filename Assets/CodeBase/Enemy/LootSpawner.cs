@@ -27,7 +27,12 @@ namespace Enemy {
         private void SpawnLoot(){
             LootPiece loot = _gameFactory.CreateLoot();
             loot.transform.position = transform.position;
-            var lootData = new Loot(){ Value = _random.Next(_lootMin, _lootMax) };
+            var lootItem = LootGeneration();
+            loot.Initialize(lootItem);
+        }
+
+        private Loot LootGeneration(){
+            return new Loot(){ Value = _random.Next(_lootMin, _lootMax) };
         }
 
         public void SetLoot(int min, int max){
