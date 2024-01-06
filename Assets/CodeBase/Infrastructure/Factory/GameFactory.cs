@@ -70,7 +70,9 @@ namespace Infrastructure.Factory {
         }
 
         public GameObject CreateHud(){
-            return InstantiateRegister(AssetPath.HUDPath);
+            var hud = InstantiateRegister(AssetPath.HUDPath);
+            hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.worldData);
+            return hud;
         }
 
         public void CleanUp(){
