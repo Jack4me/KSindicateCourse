@@ -14,7 +14,7 @@ namespace Enemy {
         private Transform _heroTransform;
 
         public float EffectiveDistance = 0.5f;
-        public float Cleavage = 1f;
+        public float Radius = 1f;
         public float damage = 10;
         public float AttackCoolDown = 3;
         private float _attackCoolDown;
@@ -48,7 +48,9 @@ namespace Enemy {
 
         private bool CanAttack() => _isAttackActive && !_isAttaking && CoolDownIsUp();
 
-        private bool CoolDownIsUp() => _attackCoolDown <= 0;
+        private bool CoolDownIsUp(){
+            return _attackCoolDown <= 0;
+        }
 
         public void StartAttack(){
             transform.LookAt(_heroTransform);
@@ -58,13 +60,13 @@ namespace Enemy {
 
         public void OnAttack(){
             if (Hit(out Collider hit)){
-                PhysicsDebug.DrawDebug(StartPoint(), Cleavage, 1);
+                PhysicsDebug.DrawDebug(StartPoint(), Radius, 1);
                 hit.transform.GetComponent<IHealth>().TakeDamage(damage);
             }
         }
 
         private bool Hit(out Collider Hit){
-            int hitCount = Physics.OverlapSphereNonAlloc(StartPoint(), Cleavage, _hits, _layerMask);
+            int hitCount = Physics.OverlapSphereNonAlloc(StartPoint(), Radius, _hits, _layerMask);
             //вернёт кол-во коллайдеров с которыми пересеклись
             Hit = _hits.FirstOrDefault();
             return hitCount > 0;

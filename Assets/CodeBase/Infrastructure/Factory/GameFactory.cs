@@ -5,6 +5,7 @@ using Infrastructure.AssetsManagement;
 using Infrastructure.Services.Persistent;
 using Infrastructure.Services.Randomizer;
 using StaticData;
+using UI;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
@@ -51,7 +52,7 @@ namespace Infrastructure.Factory {
             EnemyAttack enemyAttack = monster.GetComponent<EnemyAttack>();
             enemyAttack.SetHeroTransform(HeroGameObject.transform);
             enemyAttack.damage = dataForMonsters.Damage;
-            enemyAttack.Cleavage = dataForMonsters.Cleavage;
+            enemyAttack.Radius = dataForMonsters.Radius;
             enemyAttack.EffectiveDistance = dataForMonsters.EffectiveDistance;
             
            

@@ -5,6 +5,7 @@ using Infrastructure.Services.Persistent;
 using UnityEngine;
 using Infrastructure.States;
 using Logic;
+using UI;
 
 namespace Infrastructure.States {
     public class LoadLevelState : ILoadLvlState<string> {

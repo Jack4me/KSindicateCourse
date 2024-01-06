@@ -6,28 +6,28 @@ namespace Logic
   {
     private IAnimationStateReader _stateReader;
 
-    public override void OnStateEnter(Animator Animator, AnimatorStateInfo StateInfo, int LayerIndex)
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-      base.OnStateEnter(Animator, StateInfo, LayerIndex);
-      FindReader(Animator);
+      base.OnStateEnter(animator, stateInfo, layerIndex);
+      FindReader(animator);
      
-      _stateReader.EnteredState(StateInfo.shortNameHash);
+      _stateReader.EnteredState(stateInfo.shortNameHash);
     }
 
-    public override void OnStateExit(Animator Animator, AnimatorStateInfo StateInfo, int LayerIndex)
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-      base.OnStateExit(Animator, StateInfo, LayerIndex);
-      FindReader(Animator);
+      base.OnStateExit(animator, stateInfo, layerIndex);
+      FindReader(animator);
      
-      _stateReader.ExitedState(StateInfo.shortNameHash);
+      _stateReader.ExitedState(stateInfo.shortNameHash);
     }
 
-    private void FindReader(Animator Animator)
+    private void FindReader(Animator animator)
     {
       if (_stateReader != null)
         return;
 
-      _stateReader = Animator.gameObject.GetComponent<IAnimationStateReader>();
+      _stateReader = animator.gameObject.GetComponent<IAnimationStateReader>();
     }
   }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Hero {
+namespace UI {
     public class HpBar : MonoBehaviour {
         public Image imageCurrent;
 

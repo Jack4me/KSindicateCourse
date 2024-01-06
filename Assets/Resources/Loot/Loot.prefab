@@ -160,6 +160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickupPopup
       objectReference: {fileID: 0}
+    - target: {fileID: 3634758806780902263, guid: 3d8f29094dcec0f419e5231ad2acbd23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3635163630298570638, guid: 3d8f29094dcec0f419e5231ad2acbd23,
         type: 3}
       propertyPath: m_Mesh

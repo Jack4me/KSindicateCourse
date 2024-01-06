@@ -48,16 +48,16 @@ namespace Enemy {
     public void ExitedState(int StateHash) => 
       StateExited?.Invoke(StateFor(StateHash));
 
-    private AnimatorState StateFor(int StateHash)
+    private AnimatorState StateFor(int stateHash)
     {
       AnimatorState state;
-      if (StateHash == _idleStateHash)
+      if (stateHash == _idleStateHash)
         state = AnimatorState.Idle;
-      else if (StateHash == _attackStateHash)
+      else if (stateHash == _attackStateHash)
         state = AnimatorState.Attack;
-      else if (StateHash == _walkingStateHash)
+      else if (stateHash == _walkingStateHash)
         state = AnimatorState.Walking;
-      else if (StateHash == _deathStateHash)
+      else if (stateHash == _deathStateHash)
         state = AnimatorState.Died;
       else
         state = AnimatorState.Unknown;

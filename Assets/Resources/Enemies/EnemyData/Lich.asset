@@ -17,7 +17,7 @@ MonoBehaviour:
   MinLoot: 9
   Hp: 4
   Damage: 10
-  Cleavage: 2
+  Radius: 2
   EffectiveDistance: 2
   MoveSpeed: 2
   Prefab: {fileID: 8240193669835469760, guid: 4bfae53d0387a9e459400305938bd096, type: 3}

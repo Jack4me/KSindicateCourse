@@ -1,7 +1,8 @@
+using Hero;
 using Logic;
 using UnityEngine;
 
-namespace Hero
+namespace UI
 {
   public class ActorUI : MonoBehaviour
   {
