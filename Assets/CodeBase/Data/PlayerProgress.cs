@@ -9,8 +9,8 @@ namespace Data {
         public HeroStats HeroStats;
 
         public PlayerProgress(string initialLevel){
-            KillData = new KillData();
             worldData = new WorldData(initialLevel);
+            KillData = new KillData();
             stateHeroHp = new StateHp();
             HeroStats = new HeroStats();
         }

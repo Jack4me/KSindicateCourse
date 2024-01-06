@@ -7,6 +7,7 @@ namespace Data {
         public PositionAtLvL positionAtLvL;
 
         public WorldData(string initialLevel){
+            LootData = new LootData();
             positionAtLvL = new PositionAtLvL(initialLevel);
         }
     }

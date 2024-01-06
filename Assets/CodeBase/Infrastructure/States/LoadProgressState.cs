@@ -25,7 +25,7 @@ namespace Infrastructure.States {
 
         private void LoadProgressOrInitNew(){
              _persistentProgressService.Progress = _saveLoaderService.LoadProgress() ?? NewProgress();
-            // _persistentProgressService.Progress = NewProgress();
+             //_persistentProgressService.Progress = NewProgress();
            
         }
 

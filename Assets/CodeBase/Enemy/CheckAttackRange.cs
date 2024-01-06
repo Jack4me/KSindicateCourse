@@ -13,11 +13,11 @@ namespace Enemy {
             triggerObserver.TriggerExit  += OnTriggerExit;
         }
 
-        private void OnTriggerEnter(Collider Obj){
+        private void OnTriggerEnter(Collider obj){
             enemyAttack.EnableAttack();
         }
 
-        private void OnTriggerExit(Collider Obj){
+        private void OnTriggerExit(Collider obj){
             enemyAttack.DisableAttack();
             
         }

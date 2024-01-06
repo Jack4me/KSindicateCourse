@@ -71,7 +71,7 @@ namespace Infrastructure.Factory {
 
         public GameObject CreateHud(){
             var hud = InstantiateRegister(AssetPath.HUDPath);
-            hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.worldData);
+           hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.worldData);
             return hud;
         }
 

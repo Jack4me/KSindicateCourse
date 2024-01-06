@@ -9,9 +9,9 @@ namespace Infrastructure.Services.Persistent.SaveLoad {
         private readonly IPersistentProgressService _progressService;
         private readonly IGameFactory _gameFactory;
 
-        public SaveLoadService(IPersistentProgressService ProgressService, IGameFactory GameFactory){
-            _progressService = ProgressService;
-            _gameFactory = GameFactory;
+        public SaveLoadService(IPersistentProgressService progressService, IGameFactory gameFactory){
+            _progressService = progressService;
+            _gameFactory = gameFactory;
         }
 
         public void SaveProgress(){

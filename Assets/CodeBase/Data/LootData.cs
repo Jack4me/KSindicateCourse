@@ -8,7 +8,7 @@ namespace Data {
 
         public void Collect(Loot loot){
             Collected += loot.Value;
-            ChangedAction?.Invoke();
+           ChangedAction?.Invoke();
         }
     }
 }

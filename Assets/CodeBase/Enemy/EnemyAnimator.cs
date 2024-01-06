@@ -29,24 +29,24 @@ namespace Enemy {
     public void PlayHit() => _animator.SetTrigger(_hit);
     public void PlayDeath() => _animator.SetTrigger(_die);
 
-    public void Move(float Speed)
+    public void Move(float speed)
     {
       _animator.SetBool(_isMoving, true);
-      _animator.SetFloat(_speed, Speed);
+      _animator.SetFloat(_speed, speed);
     }
 
     public void StopMoving() => _animator.SetBool(_isMoving, false);
 
     public void PlayAttack() => _animator.SetTrigger(_attack);
 
-    public void EnteredState(int StateHash)
+    public void EnteredState(int stateHash)
     {
-      State = StateFor(StateHash);
+      State = StateFor(stateHash);
       StateEntered?.Invoke(State);
     }
     
-    public void ExitedState(int StateHash) => 
-      StateExited?.Invoke(StateFor(StateHash));
+    public void ExitedState(int stateHash) => 
+      StateExited?.Invoke(StateFor(stateHash));
 
     private AnimatorState StateFor(int stateHash)
     {

@@ -32,7 +32,6 @@ namespace Enemy {
                 return;
             }
             _picked = true;
-            
             UpdateWorldData();
             HideSkull();
             ShowText();

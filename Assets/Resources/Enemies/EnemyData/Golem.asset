@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   MonsterEnumId: 1
-  MaxLoot: 3
-  MinLoot: 15
+  MinLoot: 3
+  MaxLoot: 15
   Hp: 6
   Damage: 30
-  Radius: 7
-  EffectiveDistance: 7
+  Radius: 3
+  EffectiveDistance: 4
   MoveSpeed: 2
   Prefab: {fileID: 88765795185312103, guid: fef8ee76ba818f84b81b11da6bda5ddf, type: 3}

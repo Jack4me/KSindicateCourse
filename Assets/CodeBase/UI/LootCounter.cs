@@ -10,7 +10,7 @@ namespace UI {
 
         public void Construct(WorldData worldData){
             _worldData = worldData;
-            _worldData.LootData.ChangedAction += UpdateCounterText;
+           _worldData.LootData.ChangedAction += UpdateCounterText;
         }
 
         private void Start(){
