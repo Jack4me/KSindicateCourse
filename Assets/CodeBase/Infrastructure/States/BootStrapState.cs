@@ -15,15 +15,15 @@ namespace Infrastructure.States {
         private readonly SceneLoader _sceneLoader;
         private AllServices _services;
 
-        public BootStrapState(GameStateMachine GameStateMachine, SceneLoader SceneLoader, AllServices Services){
-            _stateMachine = GameStateMachine;
-            _sceneLoader = SceneLoader;
-            _services = Services;
+        public BootStrapState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, AllServices services){
+            _stateMachine = gameStateMachine;
+            _sceneLoader = sceneLoader;
+            _services = services;
             RegisterServices();
         }
 
         public void Enter(){
-            _sceneLoader.Load(Initial, OnLoaded: EnterLoadLevel);
+            _sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
         }
 
         private void EnterLoadLevel(){

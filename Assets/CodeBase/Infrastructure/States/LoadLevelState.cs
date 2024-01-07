@@ -62,12 +62,12 @@ namespace Infrastructure.States {
             }
         }
 
-        private void InitHud(GameObject Hero){
+        private void InitHud(GameObject hero){
            GameObject hud =  _gameFactory.CreateHud();
-           hud.GetComponentInChildren<ActorUI>().SetHp(Hero.GetComponent<HeroHealth>());
+           hud.GetComponentInChildren<ActorUI>().SetHp(hero.GetComponent<HeroHealth>());
                
         }
 
-        private void CameraFollow(GameObject Hero) => Camera.main.GetComponent<CameraFollow>().Follow(Hero);
+        private void CameraFollow(GameObject hero) => Camera.main.GetComponent<CameraFollow>().Follow(hero);
     }
 }

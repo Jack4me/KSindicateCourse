@@ -7,24 +7,24 @@ namespace Infrastructure {
     public class SceneLoader {
         private readonly ICoroutineRunner _coroutineRunner;
 
-        public SceneLoader(ICoroutineRunner CoroutineRunner){
-            _coroutineRunner = CoroutineRunner;
+        public SceneLoader(ICoroutineRunner coroutineRunner){
+            _coroutineRunner = coroutineRunner;
         }
 
-        public void Load(string Name, Action OnLoaded = null){
-            _coroutineRunner.StartCoroutine(LoadScene(Name, OnLoaded));
+        public void Load(string name, Action onLoaded = null){
+            _coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
         }
 
-        public IEnumerator LoadScene(string NextScene, Action OnLoaded = null){
-            if (SceneManager.GetActiveScene().name == NextScene){
-                OnLoaded?.Invoke();
+        private IEnumerator LoadScene(string nextScene, Action onLoaded = null){
+            if (SceneManager.GetActiveScene().name == nextScene){
+                onLoaded?.Invoke();
                 yield break;
             }
-            AsyncOperation waitAsync = SceneManager.LoadSceneAsync(NextScene);
+            AsyncOperation waitAsync = SceneManager.LoadSceneAsync(nextScene);
             while (!waitAsync.isDone){
                 yield return null;
             }
-            OnLoaded?.Invoke();
+            onLoaded?.Invoke();
         }
     }
 }

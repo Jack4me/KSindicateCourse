@@ -5,8 +5,8 @@ namespace Infrastructure {
     public class Game {
        // public static IInputService InputService;
         public GameStateMachine StateMachine;
-        public Game(ICoroutineRunner CoroutineRunner, LoadingCurtain Curtain){
-            StateMachine = new GameStateMachine(new SceneLoader(CoroutineRunner), Curtain, AllServices.Container);
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain){
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllServices.Container);
         }
     }
 }
