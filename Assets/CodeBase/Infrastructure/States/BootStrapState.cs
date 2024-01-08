@@ -43,7 +43,6 @@ namespace Infrastructure.States {
                     _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>()));
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
-            // _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
         }
 
         private void RegisterStaticData(){

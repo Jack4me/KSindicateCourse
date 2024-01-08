@@ -8,7 +8,7 @@
         void Enter();
     }
     public interface ILoadLvlState<TLoadScene> : IExitableState{
-        void Enter(TLoadScene LoadLvl);
+        void Enter(TLoadScene loadLvl);
     }
     
 }

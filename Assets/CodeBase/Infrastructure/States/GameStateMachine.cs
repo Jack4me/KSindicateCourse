@@ -10,13 +10,13 @@ namespace Infrastructure.States {
         private readonly Dictionary<Type, IExitableState> _state;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader SceneLoader, LoadingCurtain Curtain, AllServices Services){
+        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services){
             _state = new Dictionary<Type, IExitableState>{
-                [typeof(BootStrapState)] = new BootStrapState(this, SceneLoader, Services),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, SceneLoader, Curtain, 
-                    Services.GetService<IGameFactory>(), Services.GetService<IPersistentProgressService>()),
+                [typeof(BootStrapState)] = new BootStrapState(this, sceneLoader, services),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain, 
+                    services.GetService<IGameFactory>(), services.GetService<IPersistentProgressService>()),
                 [typeof(LoadProgressState)] = new LoadProgressState(this,
-                    Services.GetService<IPersistentProgressService>(), Services.GetService<ISaveLoadService>()),
+                    services.GetService<IPersistentProgressService>(), services.GetService<ISaveLoadService>()),
                 [typeof(GameNewLoopState)] = new GameNewLoopState(this)
             };
         }
@@ -26,10 +26,9 @@ namespace Infrastructure.States {
             state.Enter();
         }
 
-        public void EnterGeneric<TState, TLoadScene>(TLoadScene LoadScene) 
-            where TState : class, ILoadLvlState<TLoadScene>{
+        public void EnterGeneric<TState, TLoadScene>(TLoadScene loadScene) where TState : class, ILoadLvlState<TLoadScene>{
             TState state = ChangeState<TState>();
-            state.Enter(LoadScene);
+            state.Enter(loadScene);
         }
 
         private TState ChangeState<TState>() where TState : class, IExitableState{

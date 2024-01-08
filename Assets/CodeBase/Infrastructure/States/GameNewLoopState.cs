@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.States {
     public class GameNewLoopState : IState {
-        public GameNewLoopState(GameStateMachine GameStateMachine){
+        public GameNewLoopState(GameStateMachine gameStateMachine){
         }
 
         public void Exit(){

@@ -7,7 +7,7 @@ namespace Infrastructure {
     public class SceneLoader {
         private readonly ICoroutineRunner _coroutineRunner;
 
-        public SceneLoader(ICoroutineRunner coroutineRunner){
+        public SceneLoader(ICoroutineRunner coroutineRunner){   
             _coroutineRunner = coroutineRunner;
         }
 
