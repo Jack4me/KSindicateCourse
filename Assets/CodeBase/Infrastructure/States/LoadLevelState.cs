@@ -6,6 +6,7 @@ using UnityEngine;
 using Infrastructure.States;
 using Logic;
 using UI;
+using UnityEngine.SceneManagement;
 
 namespace Infrastructure.States {
     public class LoadLevelState : ILoadLvlState<string> {
@@ -42,12 +43,15 @@ namespace Infrastructure.States {
             InitHud(hero);
             CameraFollow(hero);
         }
+        
 
         private void InitSpawners(){
-            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(Enemyspawner)){
-                var spawner = spawnerObj.GetComponent<EnemySpawner>();
-                _gameFactory.Register(spawner);
-            }
+            // foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(Enemyspawner)){
+            //     var spawner = spawnerObj.GetComponent<EnemySpawner>();
+            //     _gameFactory.Register(spawner);
+            // }
+            string sceneNameKey = SceneManager.GetActiveScene().name;
+            
         }
 
         private void OnLoaded(){
