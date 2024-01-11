@@ -46,10 +46,10 @@ namespace Infrastructure.States {
         
 
         private void InitSpawners(){
-            // foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(Enemyspawner)){
-            //     var spawner = spawnerObj.GetComponent<EnemySpawner>();
-            //     _gameFactory.Register(spawner);
-            // }
+            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(Enemyspawner)){
+                var spawner = spawnerObj.GetComponent<EnemySpawner>();
+                _gameFactory.Register(spawner);
+            }
             string sceneNameKey = SceneManager.GetActiveScene().name;
             
         }

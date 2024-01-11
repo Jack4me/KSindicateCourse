@@ -24,9 +24,13 @@ namespace Logic {
         public void LoadProgress(PlayerProgress playerProgress){
             if (playerProgress.KillData.ClearedSpawnerID.Contains(_id)){
                 _slain = true;
+                Debug.Log("SPAWN");
+
             }
             else{
                 Spawn();
+                Debug.Log("SPAWN 2");
+
             }
         }
 

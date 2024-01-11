@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/08/knowledge-is-power-master(1)/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/08/knowledge-is-power-master(1)/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/08/knowledge-is-power-master(1)/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/UI/ActorUI.cs" root0="SKIP_HIGHLIGHTING" />
@@ -87,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703700174181</updated>
       <workItem from="1703700181745" duration="113551000" />
-      <workItem from="1704983916020" duration="954000" />
+      <workItem from="1704983916020" duration="4799000" />
     </task>
     <servers />
   </component>

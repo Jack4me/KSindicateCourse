@@ -8,10 +8,10 @@ namespace Infrastructure.States {
         private readonly IPersistentProgressService _persistentProgressService;
         private readonly ISaveLoadService _saveLoaderService;
 
-        public LoadProgressState(GameStateMachine GameStateMachine, IPersistentProgressService PersistentProgressService,ISaveLoadService SaveLoaderService){
-            _gameStateMachine = GameStateMachine;
-            _persistentProgressService = PersistentProgressService;
-            _saveLoaderService = SaveLoaderService;
+        public LoadProgressState(GameStateMachine gameStateMachine, IPersistentProgressService persistentProgressService,ISaveLoadService saveLoaderService){
+            _gameStateMachine = gameStateMachine;
+            _persistentProgressService = persistentProgressService;
+            _saveLoaderService = saveLoaderService;
         }
 
         public void Enter(){

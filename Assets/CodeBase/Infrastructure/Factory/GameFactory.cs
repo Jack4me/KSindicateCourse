@@ -54,8 +54,7 @@ namespace Infrastructure.Factory {
             enemyAttack.damage = dataForMonsters.Damage;
             enemyAttack.Radius = dataForMonsters.Radius;
             enemyAttack.EffectiveDistance = dataForMonsters.EffectiveDistance;
-            
-           
+
             
             return monster;
         }
@@ -82,8 +81,7 @@ namespace Infrastructure.Factory {
 
         private GameObject InstantiateRegister(string path, Vector3 position){
             GameObject gameObject = _instantiate.Instantiate(path, position);
-            //GameObject gameObject = _instantiate.Instantiate(path);
-
+           
             RegisterProgressWatcher(gameObject);
             return gameObject;
         }
