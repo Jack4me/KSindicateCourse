@@ -43,12 +43,12 @@ namespace Hero {
         }
 
         public void UpdateProgress(PlayerProgress PlayerProgress){
-            PlayerProgress.worldData.positionAtLvL = new PositionAtLvL(CurrentLvL(), transform.position.AsVectorData());
+            PlayerProgress.WorldData.positionAtLvL = new PositionAtLvL(CurrentLvL(), transform.position.AsVectorData());
         }
 
         public void LoadProgress(PlayerProgress PlayerProgress){
-            if (CurrentLvL() == PlayerProgress.worldData.positionAtLvL.lvLName){
-                Vector3Data savedPotion = PlayerProgress.worldData.positionAtLvL.position;
+            if (CurrentLvL() == PlayerProgress.WorldData.positionAtLvL.lvLName){
+                Vector3Data savedPotion = PlayerProgress.WorldData.positionAtLvL.position;
                 if (savedPotion != null){
                     TransformTo(To: savedPotion);
                 }

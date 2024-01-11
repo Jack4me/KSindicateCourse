@@ -17,7 +17,7 @@ namespace Infrastructure.States {
         public void Enter(){
             LoadProgressOrInitNew();
             _gameStateMachine.EnterGeneric<LoadLevelState, string>(
-                _persistentProgressService.Progress.worldData.positionAtLvL.lvLName);
+                _persistentProgressService.Progress.WorldData.positionAtLvL.lvLName);
         }
 
         public void Exit(){
@@ -31,10 +31,10 @@ namespace Infrastructure.States {
 
         private PlayerProgress NewProgress(){
             var progress = new PlayerProgress("SampleScene");
-            progress.stateHeroHp.maxHp = 50;
+            progress.StateHeroHp.maxHp = 50;
             progress.HeroStats.Damage = 1f;
             progress.HeroStats.DamageRadius = 1f;
-            progress.stateHeroHp.ResetHp();
+            progress.StateHeroHp.ResetHp();
             
             
             return progress;

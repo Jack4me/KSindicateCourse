@@ -65,13 +65,13 @@ namespace Infrastructure.Factory {
                GameObject newLoot = InstantiateRegister(AssetPath.LootPath);
                LootPiece lootPiece = newLoot.GetComponent<LootPiece>();
                
-               lootPiece.Construct(_persistentProgressService.Progress.worldData);
+               lootPiece.Construct(_persistentProgressService.Progress.WorldData);
                return lootPiece;
         }
 
         public GameObject CreateHud(){
             var hud = InstantiateRegister(AssetPath.HUDPath);
-           hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.worldData);
+           hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.WorldData);
             return hud;
         }
 

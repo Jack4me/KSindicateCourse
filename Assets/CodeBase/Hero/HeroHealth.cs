@@ -28,13 +28,13 @@ namespace Hero {
         }
 
         public void LoadProgress(PlayerProgress PlayerProgress){
-            _playerStateHp = PlayerProgress.stateHeroHp;
+            _playerStateHp = PlayerProgress.StateHeroHp;
             HealthChanged?.Invoke();
 
         }
 
         public void UpdateProgress(PlayerProgress PlayerProgress){
-            PlayerProgress.stateHeroHp.currentHp = CurrentHp;
+            PlayerProgress.StateHeroHp.currentHp = CurrentHp;
             // playerProgress.StateHeroHP.MaxHP = MaxHP;
         }
 
