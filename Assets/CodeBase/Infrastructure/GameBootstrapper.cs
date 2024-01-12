@@ -6,10 +6,10 @@ namespace Infrastructure {
         private Game _game;
         public LoadingCurtain curtainPrefab;
         private void Awake(){
-            _game = new Game(this, Instantiate(curtainPrefab) );
+            LoadingCurtain loadingCurtain = Instantiate(curtainPrefab);
+            _game = new Game(this, loadingCurtain);
             _game.StateMachine.EnterGeneric<BootStrapState>();
             DontDestroyOnLoad(this);
-            
         }
     }
 }

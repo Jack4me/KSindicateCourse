@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Infrastructure.States {
     class BootStrapState : IState {
-        private const string Initial = "Initial";
+        private const string INITIAL = "Initial";
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private AllServices _services;
@@ -23,7 +23,7 @@ namespace Infrastructure.States {
         }
 
         public void Enter(){
-            _sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
+            _sceneLoader.Load(INITIAL, onLoaded: EnterLoadLevel);
         }
 
         private void EnterLoadLevel(){
