@@ -65,10 +65,10 @@ namespace Enemy {
             }
         }
 
-        private bool Hit(out Collider Hit){
+        private bool Hit(out Collider hit){
             int hitCount = Physics.OverlapSphereNonAlloc(StartPoint(), Radius, _hits, _layerMask);
             //вернёт кол-во коллайдеров с которыми пересеклись
-            Hit = _hits.FirstOrDefault();
+            hit = _hits.FirstOrDefault();
             return hitCount > 0;
         }
 

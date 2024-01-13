@@ -12,7 +12,7 @@ namespace Logic {
         public MonsterTypeId typeMonster;
 
         private string _id;
-        public bool _slain;
+        public bool Slain;
         private IGameFactory _factory;
         private EnemyDeath _enemyDeath;
 
@@ -23,7 +23,7 @@ namespace Logic {
 
         public void LoadProgress(PlayerProgress playerProgress){
             if (playerProgress.KillData.ClearedSpawnerID.Contains(_id)){
-                _slain = true;
+                Slain = true;
 
             }
             else{
@@ -41,11 +41,11 @@ namespace Logic {
         private void Slay(){
             if (_enemyDeath != null)
                 _enemyDeath.Happened -= Slay;
-            _slain = true;
+            Slain = true;
         }
 
         public void UpdateProgress(PlayerProgress playerProgress){
-            if (_slain){
+            if (Slain){
                 playerProgress.KillData.ClearedSpawnerID.Add(_id);
             }
         }

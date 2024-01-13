@@ -10,12 +10,6 @@ namespace UI
 
     private IHealth _health;
 
-    public void SetHp(IHealth health)
-    {
-      _health = health;
-      _health.HealthChanged += UpdateHpBar;
-    }
-
     private void Start()
     {
       IHealth health = GetComponent<IHealth>();
@@ -24,10 +18,10 @@ namespace UI
         SetHp(health);
     }
 
-    private void OnDestroy()
+    public void SetHp(IHealth health)
     {
-      if (_health != null)
-        _health.HealthChanged -= UpdateHpBar;
+      _health = health;
+      _health.HealthChanged += UpdateHpBar;
     }
 
     private void UpdateHpBar()
@@ -35,5 +29,10 @@ namespace UI
       HpBar.SetValue(_health.CurrentHp, _health.MaxHp);
     }
 
+    private void OnDestroy()
+    {
+      if (_health != null)
+        _health.HealthChanged -= UpdateHpBar;
+    }
   }
 }

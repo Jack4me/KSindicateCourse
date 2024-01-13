@@ -27,7 +27,7 @@ namespace Enemy {
         private void SpawnLoot(){
             LootPiece loot = _gameFactory.CreateLoot();
             loot.transform.position = transform.position;
-            var lootItem = LootGeneration();
+            Loot lootItem = LootGeneration();
             loot.Initialize(lootItem);
         }
 

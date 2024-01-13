@@ -21,7 +21,7 @@ namespace Infrastructure.States {
             _services = services;
             RegisterServices();
         }
-
+            
         public void Enter(){
             _sceneLoader.Load(INITIAL, onLoaded: EnterLoadLevel);
         }
@@ -52,6 +52,7 @@ namespace Infrastructure.States {
         }
 
         public void Exit(){
+            
         }
 
         private static IInputService RegisterInputServices(){

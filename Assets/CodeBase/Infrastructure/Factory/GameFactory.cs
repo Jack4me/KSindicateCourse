@@ -54,7 +54,6 @@ namespace Infrastructure.Factory {
             enemyAttack.damage = dataForMonsters.Damage;
             enemyAttack.Radius = dataForMonsters.Radius;
             enemyAttack.EffectiveDistance = dataForMonsters.EffectiveDistance;
-
             
             return monster;
         }

@@ -9,6 +9,7 @@ namespace Enemy {
         [SerializeField] private float _currentHp;
         [SerializeField] private float _maxHp;
 
+        public event Action HealthChanged;
         public float CurrentHp{
             get{ return _currentHp; }
             set{ _currentHp = value; }
@@ -19,7 +20,6 @@ namespace Enemy {
             set{ _maxHp = value; }
         }
 
-        public event Action HealthChanged;
 
         public void TakeDamage(float damage){
             Debug.Log("HITTTT");
