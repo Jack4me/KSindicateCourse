@@ -17,7 +17,7 @@ namespace Infrastructure.States {
         public void Enter(){
             LoadProgressOrInitNew();
             _gameStateMachine.EnterGeneric<LoadLevelState, string>(
-                _persistentProgressService.Progress.WorldData.positionAtLvL.lvLName);
+                _persistentProgressService.Progress.WorldData.PositionAtLvL.lvLName);
         }
 
         public void Exit(){

@@ -4,11 +4,11 @@ namespace Data {
     [Serializable]
     public class WorldData {
         public LootData LootData;
-        public PositionAtLvL positionAtLvL;
+        public PositionAtLvL PositionAtLvL;
 
         public WorldData(string initialLevel){
             LootData = new LootData();
-            positionAtLvL = new PositionAtLvL(initialLevel);
+            PositionAtLvL = new PositionAtLvL(initialLevel);
         }
     }
 }
