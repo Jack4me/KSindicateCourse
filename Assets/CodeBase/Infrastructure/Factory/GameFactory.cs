@@ -84,7 +84,7 @@ namespace Infrastructure.Factory {
             RegisterProgressWatcher(gameObject);
             return gameObject;
         }
-
+        
         private GameObject InstantiateRegister(string path){
             GameObject gameObject = _instantiate.Instantiate(path);
             RegisterProgressWatcher(gameObject);

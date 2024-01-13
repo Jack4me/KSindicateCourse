@@ -1,4 +1,6 @@
-﻿using Infrastructure.AssetsManagement;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Infrastructure.AssetsManagement;
 using Infrastructure.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.Persistent;
@@ -21,7 +23,7 @@ namespace Infrastructure.States {
             _services = services;
             RegisterServices();
         }
-            
+
         public void Enter(){
             _sceneLoader.Load(INITIAL, onLoaded: EnterLoadLevel);
         }
@@ -32,27 +34,28 @@ namespace Infrastructure.States {
 
         private void RegisterServices(){
             RegisterStaticData();
-            
-            
             _services.RegisterService<IInstantiateProvider>(new InstantiateProvider());
             _services.RegisterService<IRandomService>(new RandomService());
             _services.RegisterService<IInputService>(RegisterInputServices());
             _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
             _services.RegisterService<IGameFactory>(new GameFactory
-                (_services.GetService<IInstantiateProvider>(), _services.GetService<IStaticDataService>(),
-                    _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>()));
+            (_services.GetService<IInstantiateProvider>(), _services.GetService<IStaticDataService>(),
+                _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>()));
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
         }
 
         private void RegisterStaticData(){
-            IStaticDataService staticData = new StaticMonstersDataService();
-            staticData.LoadMonsters();
+            Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas
+                = Resources.LoadAll<MonsterStaticData>("Enemies/EnemyData")
+                .ToDictionary(x=> x.MonsterEnumId, x=>x);
+            IStaticDataService staticData = new StaticMonstersDataService(monsterStaticDatas);
+            
+            //staticData.LoadMonsters();
             _services.RegisterService<IStaticDataService>(staticData);
         }
 
         public void Exit(){
-            
         }
 
         private static IInputService RegisterInputServices(){

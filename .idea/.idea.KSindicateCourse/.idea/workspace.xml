@@ -29,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Services/Randomizer/IRandomService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/11/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Services/Randomizer/RandomService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Utilities/ResourceReloader.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,7 +92,7 @@
       <updated>1703700174181</updated>
       <workItem from="1703700181745" duration="113551000" />
       <workItem from="1704983916020" duration="16284000" />
-      <workItem from="1705135440865" duration="8605000" />
+      <workItem from="1705135440865" duration="12612000" />
     </task>
     <servers />
   </component>

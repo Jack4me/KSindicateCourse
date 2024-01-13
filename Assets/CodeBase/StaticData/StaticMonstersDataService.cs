@@ -1,10 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace StaticData {
     public class StaticMonstersDataService : IStaticDataService {
         private Dictionary<MonsterTypeId, MonsterStaticData> _monsters;
+
+        public StaticMonstersDataService([NotNull] Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas){
+            _monsters = monsterStaticDatas ?? throw new ArgumentNullException(nameof(monsterStaticDatas));
+        }
 
         public void LoadMonsters(){
             // _monsters = new Dictionary<MonsterTypeId, MonsterStaticData>();
