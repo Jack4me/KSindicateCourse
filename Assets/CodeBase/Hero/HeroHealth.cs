@@ -27,8 +27,8 @@ namespace Hero {
             set => _playerStateHp.maxHp = value;
         }
 
-        public void LoadProgress(PlayerProgress PlayerProgress){
-            _playerStateHp = PlayerProgress.StateHeroHp;
+        public void LoadProgress(PlayerProgress playerProgress){
+            _playerStateHp = playerProgress.StateHeroHp;
             HealthChanged?.Invoke();
 
         }
