@@ -38,13 +38,13 @@ namespace Hero {
             // playerProgress.StateHeroHP.MaxHP = MaxHP;
         }
 
-        public void TakeDamage(float Damage){
+        public void TakeDamage(float damage){
             Debug.Log("CurrentHP" + CurrentHp);
             
             if (CurrentHp <= 0){
                 return;
             }
-            CurrentHp -= Damage;
+            CurrentHp -= damage;
             heroAnimator.PlayHit();
         }
     }
