@@ -33,8 +33,8 @@ namespace Hero {
 
         }
 
-        public void UpdateProgress(PlayerProgress PlayerProgress){
-            PlayerProgress.StateHeroHp.currentHp = CurrentHp;
+        public void UpdateProgress(PlayerProgress playerProgress){
+            playerProgress.StateHeroHp.currentHp = CurrentHp;
             // playerProgress.StateHeroHP.MaxHP = MaxHP;
         }
 
