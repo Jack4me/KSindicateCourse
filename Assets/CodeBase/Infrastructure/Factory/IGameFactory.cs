@@ -10,7 +10,7 @@ namespace Infrastructure.Factory {
     public interface IGameFactory : IService {
         List<ISaveProgressReader> ProgressReaders{ get; }
         List<ISaveProgress> ProgressWriters{ get; }
-        GameObject CreateHero(GameObject At);
+        GameObject CreateHero(GameObject at);
 
         GameObject CreateHud();
         void CleanUp();

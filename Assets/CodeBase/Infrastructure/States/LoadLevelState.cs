@@ -39,7 +39,7 @@ namespace Infrastructure.States {
 
         private void InitGameWorld(){
             InitSpawners();
-            GameObject hero = _gameFactory.CreateHero(At: GameObject.FindWithTag(InitialPoint));
+            GameObject hero = _gameFactory.CreateHero(at: GameObject.FindWithTag(InitialPoint));
             InitHud(hero);
             CameraFollow(hero);
         }
