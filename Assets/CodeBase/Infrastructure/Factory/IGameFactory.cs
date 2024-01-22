@@ -8,13 +8,13 @@ using UnityEngine;
 
 namespace Infrastructure.Factory {
     public interface IGameFactory : IService {
-        List<ISaveProgressReader> ProgressReaders{ get; }
+        List<ISaveProgressRLoader> ProgressReaders{ get; }
         List<ISaveProgress> ProgressWriters{ get; }
         GameObject CreateHero(GameObject at);
 
         GameObject CreateHud();
         void CleanUp();
-        public void Register(ISaveProgressReader progressReader);
+        public void Register(ISaveProgressRLoader progressRLoader);
         GameObject CreateMonster (MonsterTypeId typeMonster, Transform transform);
         LootPiece CreateLoot();
     }

@@ -17,7 +17,7 @@ namespace Infrastructure.Factory {
         private readonly IStaticDataService _staticData;
         private readonly IRandomService _random;
         private readonly IPersistentProgressService _persistentProgressService;
-        public List<ISaveProgressReader> ProgressReaders{ get; } = new List<ISaveProgressReader>();
+        public List<ISaveProgressRLoader> ProgressReaders{ get; } = new List<ISaveProgressRLoader>();
         public List<ISaveProgress> ProgressWriters{ get; } = new List<ISaveProgress>();
 
         public GameObject HeroGameObject{ get; set; }
@@ -92,16 +92,16 @@ namespace Infrastructure.Factory {
         }
 
         private void RegisterProgressWatcher(GameObject hero){
-            foreach (ISaveProgressReader progressReader in hero.GetComponentsInChildren<ISaveProgressReader>()){
+            foreach (ISaveProgressRLoader progressReader in hero.GetComponentsInChildren<ISaveProgressRLoader>()){
                 Register(progressReader);
             }
         }
 
-        public void Register(ISaveProgressReader progressReader){
-            if (progressReader is ISaveProgress progressWriter){
+        public void Register(ISaveProgressRLoader progressRLoader){
+            if (progressRLoader is ISaveProgress progressWriter){
                 ProgressWriters.Add(progressWriter);
             }
-            ProgressReaders.Add(progressReader);
+            ProgressReaders.Add(progressRLoader);
         }
     }
 }

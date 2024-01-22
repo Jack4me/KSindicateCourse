@@ -61,7 +61,7 @@ namespace Infrastructure.States {
         }
 
         private void InformProgressReaders(){
-            foreach (ISaveProgressReader progressReader in _gameFactory.ProgressReaders){
+            foreach (ISaveProgressRLoader progressReader in _gameFactory.ProgressReaders){
                 progressReader.LoadProgress(_persistentProgressService.Progress);
             }
         }
