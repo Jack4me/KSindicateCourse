@@ -2,12 +2,12 @@
 
 namespace Infrastructure.Services.Persistent {
     public interface ISaveProgressReader {
-        void LoadProgress(PlayerProgress PlayerProgress);
+        void LoadProgress(PlayerProgress playerProgress);
 
     }
 
     public interface ISaveProgress : ISaveProgressReader {
-        void UpdateProgress(PlayerProgress PlayerProgress);
+        void UpdateProgress(PlayerProgress playerProgress);
 
     }
 }
