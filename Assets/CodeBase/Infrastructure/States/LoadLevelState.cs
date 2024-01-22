@@ -10,8 +10,8 @@ using UnityEngine.SceneManagement;
 
 namespace Infrastructure.States {
     public class LoadLevelState : ILoadLvlState<string> {
-        private const string InitialPoint = "InitialPoint";
-        private const string Enemyspawner = "EnemySpawner";
+        private const string INITIAL_POINT = "InitialPoint";
+        private const string ENEMYSPAWNER = "EnemySpawner";
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
@@ -39,14 +39,14 @@ namespace Infrastructure.States {
 
         private void InitGameWorld(){
             InitSpawners();
-            GameObject hero = _gameFactory.CreateHero(at: GameObject.FindWithTag(InitialPoint));
+            GameObject hero = _gameFactory.CreateHero(at: GameObject.FindWithTag(INITIAL_POINT));
             InitHud(hero);
             CameraFollow(hero);
         }
         
 
         private void InitSpawners(){
-            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(Enemyspawner)){
+            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(ENEMYSPAWNER)){
                 var spawner = spawnerObj.GetComponent<EnemySpawner>();
                 _gameFactory.Register(spawner);
             }
