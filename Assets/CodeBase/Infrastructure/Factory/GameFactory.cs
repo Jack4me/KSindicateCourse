@@ -5,6 +5,7 @@ using Infrastructure.AssetsManagement;
 using Infrastructure.Services.Persistent;
 using Infrastructure.Services.Randomizer;
 using Logic;
+using Logic.EnemySpawners;
 using StaticData;
 using UI;
 using Unity.Mathematics;
@@ -15,7 +16,7 @@ using Object = UnityEngine.Object;
 namespace Infrastructure.Factory {
     public class GameFactory : IGameFactory {
         private readonly IInstantiateProvider _instantiate;
-        private readonly IStaticMonsterDataService _staticMonsterData;
+        private readonly IStaticDataService _staticData;
         private readonly IRandomService _random;
         private readonly IPersistentProgressService _persistentProgressService;
         public List<ISaveProgressRLoader> ProgressReaders{ get; } = new List<ISaveProgressRLoader>();
@@ -23,10 +24,10 @@ namespace Infrastructure.Factory {
 
         public GameObject HeroGameObject{ get; set; }
 
-        public GameFactory(IInstantiateProvider instantiate, IStaticMonsterDataService staticMonsterData, IRandomService random,
+        public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData, IRandomService random,
             IPersistentProgressService persistentProgressService){
             _instantiate = instantiate;
-            _staticMonsterData = staticMonsterData;
+            _staticData = staticData;
             _random = random;
             _persistentProgressService = persistentProgressService;
         }
@@ -37,7 +38,7 @@ namespace Infrastructure.Factory {
         }
 
         public GameObject CreateMonster(MonsterTypeId typeMonster, Transform parent){
-            MonsterStaticData dataForMonsters = _staticMonsterData.DataForMonsters(typeMonster);
+            MonsterStaticData dataForMonsters = _staticData.DataForMonsters(typeMonster);
             GameObject monster = Object.Instantiate(dataForMonsters.Prefab, parent.position, quaternion.identity, parent);
             EnemyHealth enemyHealth = monster.GetComponent<EnemyHealth>();
             enemyHealth.CurrentHp = dataForMonsters.Hp;
@@ -69,9 +70,10 @@ namespace Infrastructure.Factory {
         }
 
         public void CreateSpawner(Vector3 at, string spawnerId, MonsterTypeId monsterTypeId){
-            EnemySpawner enemySpawner = InstantiateRegister(AssetPath.SPAWNER_PATH, at).GetComponent<EnemySpawner>();
-            enemySpawner._id = spawnerId;
-            enemySpawner.typeMonster = monsterTypeId;
+            SpawnPoint spawnPoint = InstantiateRegister(AssetPath.SPAWNER_PATH, at).GetComponent<SpawnPoint>();
+            spawnPoint.Construct(this);
+            spawnPoint._id = spawnerId;
+            spawnPoint.typeMonster = monsterTypeId;
         }
 
         public GameObject CreateHud(){

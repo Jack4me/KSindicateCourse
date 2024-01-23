@@ -1,39 +1,32 @@
-﻿using System;
-using Data;
+﻿using Data;
 using Enemy;
 using Infrastructure.Factory;
-using Infrastructure.Services;
 using Infrastructure.Services.Persistent;
 using StaticData;
 using UnityEngine;
 
-namespace Logic {
-    public class EnemySpawner : MonoBehaviour, ISaveProgress {
+namespace Logic.EnemySpawners {
+    public class SpawnPoint : MonoBehaviour, ISaveProgress {
         public MonsterTypeId typeMonster;
 
-        public string _id;
+        public string _id{ get; set; }
         public bool Slain;
-        private IGameFactory _factory;
+        private IGameFactory _gameFactory;
         private EnemyDeath _enemyDeath;
 
-        private void Awake(){
-            _id = GetComponent<UniqueID>().ID;
-            _factory = AllServices.Container.GetService<IGameFactory>();
-        }
+        public void Construct(IGameFactory factory) => _gameFactory = factory;
 
         public void LoadProgress(PlayerProgress playerProgress){
             if (playerProgress.KillData.ClearedSpawnerID.Contains(_id)){
                 Slain = true;
-
             }
             else{
                 Spawn();
-
             }
         }
 
         private void Spawn(){
-            GameObject newMonster = _factory.CreateMonster(typeMonster, transform);
+            GameObject newMonster = _gameFactory.CreateMonster(typeMonster, transform);
             _enemyDeath = newMonster.GetComponent<EnemyDeath>();
             _enemyDeath.Happened += Slay;
         }

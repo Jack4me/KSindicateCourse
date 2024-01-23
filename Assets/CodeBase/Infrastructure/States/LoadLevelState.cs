@@ -18,17 +18,17 @@ namespace Infrastructure.States {
         private readonly LoadingCurtain _curtain;
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _persistentProgressService;
-        private readonly IStaticMonsterDataService _staticMonsterDataService;
+        private readonly IStaticDataService _staticDataService;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain curtain,
             IGameFactory gameFactory, IPersistentProgressService persistentProgressService,
-            IStaticMonsterDataService staticMonsterDataService){
+            IStaticDataService staticDataService){
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _curtain = curtain;
             _gameFactory = gameFactory;
             _persistentProgressService = persistentProgressService;
-            _staticMonsterDataService = staticMonsterDataService;
+            _staticDataService = staticDataService;
         }
 
         public void Enter(string sceneName){
@@ -55,7 +55,7 @@ namespace Infrastructure.States {
             //     _gameFactory.Register(spawner);
             // }
             string sceneNameKey = SceneManager.GetActiveScene().name;
-            LevelStaticData levelStaticData = _staticMonsterDataService.ForLevel(sceneNameKey);
+            LevelStaticData levelStaticData = _staticDataService.ForLevel(sceneNameKey);
             foreach (EnemySpawnerData spawner in levelStaticData.EnemySpawnerInfo){
                 _gameFactory.CreateSpawner(spawner.Position, spawner.Id, spawner.MosterTypeId);
             }

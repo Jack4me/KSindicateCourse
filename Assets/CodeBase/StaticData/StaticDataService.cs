@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 namespace StaticData {
-    public class StaticDataService : IStaticMonsterDataService {
+    public class StaticDataService : IStaticDataService {
         private Dictionary<MonsterTypeId, MonsterStaticData> _monsters;
         private Dictionary<string, LevelStaticData> _levels;
 
