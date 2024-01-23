@@ -5,6 +5,7 @@ using Infrastructure.Services.Persistent;
 using UnityEngine;
 using Infrastructure.States;
 using Logic;
+using StaticData;
 using UI;
 using UnityEngine.SceneManagement;
 
@@ -17,14 +18,17 @@ namespace Infrastructure.States {
         private readonly LoadingCurtain _curtain;
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _persistentProgressService;
+        private readonly IStaticMonsterDataService _staticMonsterDataService;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain curtain,
-            IGameFactory gameFactory, IPersistentProgressService persistentProgressService){
+            IGameFactory gameFactory, IPersistentProgressService persistentProgressService,
+            IStaticMonsterDataService staticMonsterDataService){
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _curtain = curtain;
             _gameFactory = gameFactory;
             _persistentProgressService = persistentProgressService;
+            _staticMonsterDataService = staticMonsterDataService;
         }
 
         public void Enter(string sceneName){
@@ -46,12 +50,15 @@ namespace Infrastructure.States {
         
 
         private void InitSpawners(){
-            foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(ENEMYSPAWNER)){
-                var spawner = spawnerObj.GetComponent<EnemySpawner>();
-                _gameFactory.Register(spawner);
-            }
+            // foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(ENEMYSPAWNER)){
+            //     var spawner = spawnerObj.GetComponent<EnemySpawner>();
+            //     _gameFactory.Register(spawner);
+            // }
             string sceneNameKey = SceneManager.GetActiveScene().name;
-            
+            LevelStaticData levelStaticData = _staticMonsterDataService.ForLevel(sceneNameKey);
+            foreach (EnemySpawnerData spawner in levelStaticData.EnemySpawnerInfo){
+                _gameFactory.CreateSpawner(spawner.Position, spawner.Id, spawner.MosterTypeId);
+            }
         }
 
         private void OnLoaded(){

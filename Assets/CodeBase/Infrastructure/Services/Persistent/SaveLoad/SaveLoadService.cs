@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Infrastructure.Services.Persistent.SaveLoad {
    public class SaveLoadService : ISaveLoadService {
-        private const string ProgressKey = "Progress";
+        private const string PROGRESS_KEY = "Progress";
         private readonly IPersistentProgressService _progressService;
         private readonly IGameFactory _gameFactory;
 
@@ -17,12 +17,12 @@ namespace Infrastructure.Services.Persistent.SaveLoad {
         public void SaveProgress(){
             foreach (ISaveProgress progressWriter in _gameFactory.ProgressWriters){
                 progressWriter.UpdateProgress(_progressService.Progress); 
-                PlayerPrefs.SetString(ProgressKey, _progressService.Progress.ToJson());
+                PlayerPrefs.SetString(PROGRESS_KEY, _progressService.Progress.ToJson());
             }
         }
         
         public PlayerProgress LoadProgress(){
-            string save = PlayerPrefs.GetString(ProgressKey);
+            string save = PlayerPrefs.GetString(PROGRESS_KEY);
             return save?.ToDeserlalized<PlayerProgress>();
         }
     }

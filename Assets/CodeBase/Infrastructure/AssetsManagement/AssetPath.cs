@@ -1,7 +1,8 @@
 ﻿namespace Infrastructure.AssetsManagement {
     public static class AssetPath {
-        public const string HUDPath = "Hud/Hud";
-        public const string HeroPath = "Hero/hero";
-        public const string LootPath = "Loot/Loot";
+        public const string SPAWNER_PATH = "Enemy";
+        public const string HUD_PATH = "Hud/Hud";
+        public const string HERO_PATH = "Hero/hero";
+        public const string LOOT_PATH = "Loot/Loot";
     }
 }

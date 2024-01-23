@@ -11,7 +11,7 @@ namespace Logic {
     public class EnemySpawner : MonoBehaviour, ISaveProgress {
         public MonsterTypeId typeMonster;
 
-        private string _id;
+        public string _id;
         public bool Slain;
         private IGameFactory _factory;
         private EnemyDeath _enemyDeath;

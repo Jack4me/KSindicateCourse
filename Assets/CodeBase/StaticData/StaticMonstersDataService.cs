@@ -5,8 +5,9 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 namespace StaticData {
-    public class StaticMonstersDataService : IStaticDataService {
+    public class StaticMonstersDataService : IStaticMonsterDataService {
         private Dictionary<MonsterTypeId, MonsterStaticData> _monsters;
+        private Dictionary<string, LevelStaticData> _levels;
 
         public StaticMonstersDataService([NotNull] Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas){
             _monsters = monsterStaticDatas ?? throw new ArgumentNullException(nameof(monsterStaticDatas));
@@ -19,11 +20,17 @@ namespace StaticData {
             //     _monsters.Add(monster.MonsterEnumId, monster);
             // }
             _monsters = Resources.LoadAll<MonsterStaticData>("Enemies/EnemyData")
-                .ToDictionary(x=> x.MonsterEnumId, x=>x);
+                .ToDictionary(x => x.MonsterEnumId, x => x);
+            _levels = Resources.LoadAll<LevelStaticData>("StaticData/Levels")
+                .ToDictionary(x => x.LevelKey, x => x);
         }
 
         public MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId){
             return _monsters.TryGetValue(monsterTypeId, out MonsterStaticData staticData) ? staticData : null;
+        }
+
+        public LevelStaticData ForLevel(string sceneNameKey){
+            return _levels.TryGetValue(sceneNameKey, out LevelStaticData staticData) ? staticData : null;
         }
     }
 }

@@ -4,6 +4,7 @@ using Hero;
 using Infrastructure.AssetsManagement;
 using Infrastructure.Services.Persistent;
 using Infrastructure.Services.Randomizer;
+using Logic;
 using StaticData;
 using UI;
 using Unity.Mathematics;
@@ -14,7 +15,7 @@ using Object = UnityEngine.Object;
 namespace Infrastructure.Factory {
     public class GameFactory : IGameFactory {
         private readonly IInstantiateProvider _instantiate;
-        private readonly IStaticDataService _staticData;
+        private readonly IStaticMonsterDataService _staticMonsterData;
         private readonly IRandomService _random;
         private readonly IPersistentProgressService _persistentProgressService;
         public List<ISaveProgressRLoader> ProgressReaders{ get; } = new List<ISaveProgressRLoader>();
@@ -22,21 +23,21 @@ namespace Infrastructure.Factory {
 
         public GameObject HeroGameObject{ get; set; }
 
-        public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData, IRandomService random,
+        public GameFactory(IInstantiateProvider instantiate, IStaticMonsterDataService staticMonsterData, IRandomService random,
             IPersistentProgressService persistentProgressService){
             _instantiate = instantiate;
-            _staticData = staticData;
+            _staticMonsterData = staticMonsterData;
             _random = random;
             _persistentProgressService = persistentProgressService;
         }
 
         public GameObject CreateHero(GameObject at){
-            HeroGameObject = InstantiateRegister(AssetPath.HeroPath, at.transform.position);
+            HeroGameObject = InstantiateRegister(AssetPath.HERO_PATH, at.transform.position);
             return HeroGameObject;
         }
 
         public GameObject CreateMonster(MonsterTypeId typeMonster, Transform parent){
-            MonsterStaticData dataForMonsters = _staticData.DataForMonsters(typeMonster);
+            MonsterStaticData dataForMonsters = _staticMonsterData.DataForMonsters(typeMonster);
             GameObject monster = Object.Instantiate(dataForMonsters.Prefab, parent.position, quaternion.identity, parent);
             EnemyHealth enemyHealth = monster.GetComponent<EnemyHealth>();
             enemyHealth.CurrentHp = dataForMonsters.Hp;
@@ -60,15 +61,21 @@ namespace Infrastructure.Factory {
 
         public LootPiece CreateLoot(){
             
-               GameObject newLoot = InstantiateRegister(AssetPath.LootPath);
+               GameObject newLoot = InstantiateRegister(AssetPath.LOOT_PATH);
                LootPiece lootPiece = newLoot.GetComponent<LootPiece>();
                
                lootPiece.Construct(_persistentProgressService.Progress.WorldData);
                return lootPiece;
         }
 
+        public void CreateSpawner(Vector3 at, string spawnerId, MonsterTypeId monsterTypeId){
+            EnemySpawner enemySpawner = InstantiateRegister(AssetPath.SPAWNER_PATH, at).GetComponent<EnemySpawner>();
+            enemySpawner._id = spawnerId;
+            enemySpawner.typeMonster = monsterTypeId;
+        }
+
         public GameObject CreateHud(){
-            var hud = InstantiateRegister(AssetPath.HUDPath);
+            var hud = InstantiateRegister(AssetPath.HUD_PATH);
            hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.WorldData);
             return hud;
         }

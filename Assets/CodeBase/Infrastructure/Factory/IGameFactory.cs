@@ -17,6 +17,8 @@ namespace Infrastructure.Factory {
         public void Register(ISaveProgressRLoader progressRLoader);
         GameObject CreateMonster (MonsterTypeId typeMonster, Transform transform);
         LootPiece CreateLoot();
+        void CreateSpawner(Vector3 at, string spawnerId, MonsterTypeId monsterTypeId);
+        
     }
 
     

@@ -1,8 +1,9 @@
 ﻿using Infrastructure.Services;
 
 namespace StaticData {
-    public interface IStaticDataService : IService{
+    public interface IStaticMonsterDataService : IService{
         void LoadMonsters();
         MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId);
+        LevelStaticData ForLevel(string sceneNameKey);
     }
 }
