@@ -49,7 +49,7 @@ namespace Infrastructure.States {
             Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas
                 = Resources.LoadAll<MonsterStaticData>("Enemies/EnemyData")
                 .ToDictionary(x=> x.MonsterEnumId, x=>x);
-            IStaticMonsterDataService staticMonsterData = new StaticMonstersDataService(monsterStaticDatas);
+            IStaticMonsterDataService staticMonsterData = new StaticDataService(monsterStaticDatas);
             
             //staticData.LoadMonsters();
             _services.RegisterService<IStaticMonsterDataService>(staticMonsterData);

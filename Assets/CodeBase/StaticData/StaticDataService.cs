@@ -5,11 +5,11 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 namespace StaticData {
-    public class StaticMonstersDataService : IStaticMonsterDataService {
+    public class StaticDataService : IStaticMonsterDataService {
         private Dictionary<MonsterTypeId, MonsterStaticData> _monsters;
         private Dictionary<string, LevelStaticData> _levels;
 
-        public StaticMonstersDataService([NotNull] Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas){
+        public StaticDataService([NotNull] Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas){
             _monsters = monsterStaticDatas ?? throw new ArgumentNullException(nameof(monsterStaticDatas));
         }
 
