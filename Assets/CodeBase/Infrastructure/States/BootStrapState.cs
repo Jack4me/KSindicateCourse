@@ -52,7 +52,6 @@ namespace Infrastructure.States {
             IStaticDataService staticData = new StaticDataService(monsterStaticDatas);
             
             staticData.Load();
-            
             _services.RegisterService<IStaticDataService>(staticData);
         }
 
