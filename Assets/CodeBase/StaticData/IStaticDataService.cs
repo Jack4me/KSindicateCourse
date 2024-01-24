@@ -2,7 +2,7 @@
 
 namespace StaticData {
     public interface IStaticDataService : IService{
-        void LoadMonsters();
+        void Load();
         MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId);
         LevelStaticData ForLevel(string sceneNameKey);
     }

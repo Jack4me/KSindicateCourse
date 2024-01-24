@@ -13,7 +13,7 @@ namespace StaticData {
             _monsters = monsterStaticDatas ?? throw new ArgumentNullException(nameof(monsterStaticDatas));
         }
 
-        public void LoadMonsters(){
+        public void Load(){
             // _monsters = new Dictionary<MonsterTypeId, MonsterStaticData>();
             // MonsterStaticData[] monsterArray = Resources.LoadAll<MonsterStaticData>("Enemies/EnemyData");
             // foreach (MonsterStaticData monster in monsterArray){

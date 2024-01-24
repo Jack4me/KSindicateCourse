@@ -51,7 +51,8 @@ namespace Infrastructure.States {
                 .ToDictionary(x=> x.MonsterEnumId, x=>x);
             IStaticDataService staticData = new StaticDataService(monsterStaticDatas);
             
-            staticData.LoadMonsters();
+            staticData.Load();
+            
             _services.RegisterService<IStaticDataService>(staticData);
         }
 
