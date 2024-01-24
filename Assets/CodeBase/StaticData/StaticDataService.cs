@@ -21,8 +21,10 @@ namespace StaticData {
             // }
             _monsters = Resources.LoadAll<MonsterStaticData>("Enemies/EnemyData")
                 .ToDictionary(x => x.MonsterEnumId, x => x);
-            _levels = Resources.LoadAll<LevelStaticData>("StaticData/Levels")
+            _levels = Resources.LoadAll<LevelStaticData>("Enemies/LevelsData")
                 .ToDictionary(x => x.LevelKey, x => x);
+           
+                Debug.Log("ne NULL");
         }
 
         public MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId){
@@ -30,6 +32,7 @@ namespace StaticData {
         }
 
         public LevelStaticData ForLevel(string sceneNameKey){
+            
             return _levels.TryGetValue(sceneNameKey, out LevelStaticData staticData) ? staticData : null;
         }
     }

@@ -41,13 +41,18 @@ namespace Infrastructure.States {
             _curtain.Hide();
         }
 
+        private void OnLoaded(){
+            InitGameWorld();
+            InformProgressReaders();
+            _gameStateMachine.EnterGeneric<GameNewLoopState>();
+        }
+
         private void InitGameWorld(){
             InitSpawners();
             GameObject hero = _gameFactory.CreateHero(at: GameObject.FindWithTag(INITIAL_POINT));
             InitHud(hero);
             CameraFollow(hero);
         }
-        
 
         private void InitSpawners(){
             // foreach (GameObject spawnerObj in GameObject.FindGameObjectsWithTag(ENEMYSPAWNER)){
@@ -56,15 +61,9 @@ namespace Infrastructure.States {
             // }
             string sceneNameKey = SceneManager.GetActiveScene().name;
             LevelStaticData levelStaticData = _staticDataService.ForLevel(sceneNameKey);
-            foreach (EnemySpawnerData spawner in levelStaticData.EnemySpawnerInfo){
-                _gameFactory.CreateSpawner(spawner.Position, spawner.Id, spawner.MosterTypeId);
+            foreach (EnemySpawnerData spawnerData in levelStaticData.EnemySpawnerDataList){
+                _gameFactory.CreateSpawner(spawnerData.Position, spawnerData.Id, spawnerData.MosterTypeId);
             }
-        }
-
-        private void OnLoaded(){
-            InitGameWorld();
-            InformProgressReaders();
-            _gameStateMachine.EnterGeneric<GameNewLoopState>();
         }
 
         private void InformProgressReaders(){
