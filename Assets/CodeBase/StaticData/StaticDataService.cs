@@ -24,7 +24,6 @@ namespace StaticData {
             _levels = Resources.LoadAll<LevelStaticData>("Enemies/LevelsData")
                 .ToDictionary(x => x.LevelKey, x => x);
            
-                Debug.Log("ne NULL");
         }
 
         public MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId){
