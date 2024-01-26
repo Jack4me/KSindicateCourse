@@ -7,6 +7,7 @@ using Infrastructure.States;
 using Logic;
 using StaticData;
 using UI;
+using UI.Elements;
 using UnityEngine.SceneManagement;
 
 namespace Infrastructure.States {

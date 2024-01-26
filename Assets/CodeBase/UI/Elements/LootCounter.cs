@@ -1,9 +1,8 @@
-﻿using System;
-using Data;
+﻿using Data;
 using TMPro;
 using UnityEngine;
 
-namespace UI {
+namespace UI.Elements {
     public class LootCounter : MonoBehaviour {
         private WorldData _worldData;
         public TextMeshProUGUI CounterText;
