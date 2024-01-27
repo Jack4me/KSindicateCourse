@@ -15,7 +15,6 @@ namespace UI.Services {
                     _uiFactory.CreateShop();
                     break;
                 
-                    
             }
         }
     }
