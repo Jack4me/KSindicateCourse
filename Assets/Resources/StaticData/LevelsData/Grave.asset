@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0116677a940f45e38c2552409e6cc3e5, type: 3}
+  m_Name: Grave
+  m_EditorClassIdentifier: 
+  LevelKey: SampleScene
+  EnemySpawnerDataList:
+  - Id: _0979d6c7-c38f-4f06-a963-f3193414b921
+    MosterTypeId: 0
+    Position: {x: -7.42, y: 0.15, z: -7.63}
+  - Id: SampleScene_d5676f3b-3315-4833-b860-e3bc92e00054
+    MosterTypeId: 1
+    Position: {x: 10.9, y: 0.15, z: 5.19}
+  - Id: SampleScene_536c5635-b88b-4070-b524-c62458fc15e3
+    MosterTypeId: 0
+    Position: {x: -7.42, y: 0.15, z: 0.12}

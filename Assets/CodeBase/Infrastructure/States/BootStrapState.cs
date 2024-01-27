@@ -8,6 +8,7 @@ using Infrastructure.Services.Persistent.SaveLoad;
 using Infrastructure.Services.Randomizer;
 using Services.Input;
 using StaticData;
+using UI.Services;
 using UnityEngine;
 
 namespace Infrastructure.States {
@@ -43,6 +44,9 @@ namespace Infrastructure.States {
                 _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>()));
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
+            _services.RegisterService<IUIFactory>(new UIFactory
+                (_services.GetService<IInstantiateProvider>(), _services.GetService<IStaticDataService>()));
+            _services.RegisterService<WindowService>(new WindowService(_services.GetService<IUIFactory>()));
         }
 
         private void RegisterStaticData(){
