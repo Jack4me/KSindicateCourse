@@ -9,6 +9,7 @@ using Logic.EnemySpawners;
 using StaticData;
 using UI;
 using UI.Elements;
+using UI.Services;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,17 +21,19 @@ namespace Infrastructure.Factory {
         private readonly IStaticDataService _staticData;
         private readonly IRandomService _random;
         private readonly IPersistentProgressService _persistentProgressService;
+        private readonly IWindowService _windowService;
         public List<ISaveProgressRLoader> ProgressReaders{ get; } = new List<ISaveProgressRLoader>();
         public List<ISaveProgress> ProgressWriters{ get; } = new List<ISaveProgress>();
 
         public GameObject HeroGameObject{ get; set; }
 
         public GameFactory(IInstantiateProvider instantiate, IStaticDataService staticData, IRandomService random,
-            IPersistentProgressService persistentProgressService){
+            IPersistentProgressService persistentProgressService, IWindowService windowService){
             _instantiate = instantiate;
             _staticData = staticData;
             _random = random;
             _persistentProgressService = persistentProgressService;
+            _windowService = windowService;
         }
 
         public GameObject CreateHero(GameObject at){
@@ -80,7 +83,10 @@ namespace Infrastructure.Factory {
         public GameObject CreateHud(){
             var hud = InstantiateRegister(AssetPath.HUD_PATH);
            hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.WorldData);
-            return hud;
+           foreach (OpenWindowButton openWindowButton in hud.GetComponentsInChildren<OpenWindowButton>()){
+               openWindowButton.Construct(_windowService);
+           } 
+           return hud;
         }
 
         public void CleanUp(){

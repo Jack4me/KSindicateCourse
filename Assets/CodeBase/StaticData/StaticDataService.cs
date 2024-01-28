@@ -44,7 +44,8 @@ namespace StaticData {
         }
 
         public WindowConfig ForWindow(WindowIdEnum shop){
-            return _windowConfig.TryGetValue(shop, out WindowConfig windowConfig) ? windowConfig : null;
+            bool tryGetValue = _windowConfig.TryGetValue(shop, out WindowConfig windowConfig);
+            return tryGetValue ? windowConfig : null;
         }
     }
 }

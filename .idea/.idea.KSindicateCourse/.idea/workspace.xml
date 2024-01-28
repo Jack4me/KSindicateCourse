@@ -37,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/12/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/12/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Services/StaticData/StaticDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/13/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/Collaborate/UserInterface/Bootstrap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Utilities/ResourceReloader.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -108,6 +109,7 @@
       <workItem from="1706172455511" duration="1202000" />
       <workItem from="1706262107328" duration="9852000" />
       <workItem from="1706349154029" duration="6797000" />
+      <workItem from="1706437999943" duration="4799000" />
     </task>
     <servers />
   </component>

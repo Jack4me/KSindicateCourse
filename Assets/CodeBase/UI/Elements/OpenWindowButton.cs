@@ -12,6 +12,7 @@ namespace UI.Elements {
 
         public void Construct(IWindowService windowService){
             _windowService = windowService;
+            
         }
 
         private void Awake(){

@@ -41,7 +41,8 @@ namespace Infrastructure.States {
             _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
             _services.RegisterService<IGameFactory>(new GameFactory
             (_services.GetService<IInstantiateProvider>(), _services.GetService<IStaticDataService>(),
-                _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>()));
+                _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>(),
+                _services.GetService<IWindowService>()));
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
             _services.RegisterService<IUIFactory>(new UIFactory
@@ -52,9 +53,8 @@ namespace Infrastructure.States {
         private void RegisterStaticData(){
             Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas
                 = Resources.LoadAll<MonsterStaticData>("Enemies/EnemyData")
-                .ToDictionary(x=> x.MonsterEnumId, x=>x);
+                    .ToDictionary(x => x.MonsterEnumId, x => x);
             IStaticDataService staticData = new StaticDataService(monsterStaticDatas);
-            
             staticData.Load();
             _services.RegisterService<IStaticDataService>(staticData);
         }
