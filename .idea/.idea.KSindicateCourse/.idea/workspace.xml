@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/0b/236ffa61/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/4f/cda16d78/Resources.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/87/ccc4a311/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/08/knowledge-is-power-master(1)/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
@@ -37,7 +38,7 @@
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/12/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/12/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Services/StaticData/StaticDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../00_Main/00_Learning/Unity/KSyndicate - Архитектура мобильных игр на UNITY для профессионалов/13/knowledge-is-power-master/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/Collaborate/UserInterface/Bootstrap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/Collaborate/UserInterface/Bootstrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Utilities/ResourceReloader.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -110,6 +111,7 @@
       <workItem from="1706262107328" duration="9852000" />
       <workItem from="1706349154029" duration="6797000" />
       <workItem from="1706437999943" duration="7309000" />
+      <workItem from="1706531316402" duration="1278000" />
     </task>
     <servers />
   </component>
