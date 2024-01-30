@@ -42,8 +42,8 @@ namespace Hero {
 //            _camera.GetComponent<CameraFollow>().Follow(hero);
         }
 
-        public void UpdateProgress(PlayerProgress PlayerProgress){
-            PlayerProgress.WorldData.PositionAtLvL = new PositionAtLvL(CurrentLvL(), transform.position.AsVectorData());
+        public void UpdateProgress(PlayerProgress playerProgress){
+            playerProgress.WorldData.PositionAtLvL = new PositionAtLvL(CurrentLvL(), transform.position.AsVectorData());
         }
 
         public void LoadProgress(PlayerProgress PlayerProgress){
