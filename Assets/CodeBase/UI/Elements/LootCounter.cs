@@ -11,7 +11,7 @@ namespace UI.Elements {
             _worldData = worldData;
            _worldData.LootData.ChangedAction += UpdateCounterText;
         }
-
+            
         private void Start(){
             UpdateCounterText();
         }
