@@ -11,8 +11,8 @@ namespace Data {
             this.position = Position;
         }
 
-        public PositionAtLvL(string InitialLvLName){
-            lvLName = InitialLvLName;
+        public PositionAtLvL(string initialLvLName){
+            lvLName = initialLvLName;
         }
     }
 }
