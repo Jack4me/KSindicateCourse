@@ -6,7 +6,7 @@ namespace Infrastructure.Services {
         public GameBootstrapper bootstrapper;
 
         private void Awake(){
-            var bootstrapper = FindObjectOfType<GameBootstrapper>();
+            GameBootstrapper bootstrapper = FindObjectOfType<GameBootstrapper>();
             if (bootstrapper == null){
                 Instantiate(this.bootstrapper);
             }
