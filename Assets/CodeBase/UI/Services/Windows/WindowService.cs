@@ -1,6 +1,6 @@
-﻿using System;
+﻿using UI.Services.Factory;
 
-namespace UI.Services {
+namespace UI.Services.Windows {
     public class WindowService : IWindowService {
         public readonly IUIFactory _uiFactory;
 

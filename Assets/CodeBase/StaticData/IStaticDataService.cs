@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Services;
 using UI.Services;
+using UI.Services.Windows;
 
 namespace StaticData {
     public interface IStaticDataService : IService{

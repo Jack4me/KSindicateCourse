@@ -1,8 +1,9 @@
 ﻿using Infrastructure.AssetsManagement;
 using StaticData;
+using UI.Services.Windows;
 using UnityEngine;
 
-namespace UI.Services {
+namespace UI.Services.Factory {
     class UIFactory : IUIFactory {
         private const string UI_ROOT = "UI / UI_Root";
         public readonly IInstantiateProvider _assets;
