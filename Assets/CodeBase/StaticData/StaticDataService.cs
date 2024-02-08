@@ -29,7 +29,7 @@ namespace StaticData {
             _levels = Resources.LoadAll<LevelStaticData>("StaticData/LevelsData")
                 .ToDictionary(x => x.LevelKey, x => x);
 
-            _windowConfig = Resources.Load<WindowStaticData>("StaticData/UI/WindowStaticData").WindowConfigsList
+            _windowConfig = Resources.Load<WindowStaticData>("StaticData/WindowsData/WindowStaticData").WindowConfigsList
                 .ToDictionary(x => x.WindowId, x => x);
 
         }
