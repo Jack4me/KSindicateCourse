@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UI.Services.Factory {
     class UIFactory : IUIFactory {
-        private const string UI_ROOT = "UI / UI_Root";
+        private const string UI_ROOT = "UI/UI_Root";
         public readonly IInstantiateProvider _assets;
         public IStaticDataService _staticData;
         private Transform _uiRoot;

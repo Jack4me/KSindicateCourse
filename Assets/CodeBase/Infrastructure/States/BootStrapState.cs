@@ -45,6 +45,7 @@ namespace Infrastructure.States {
             (_services.GetService<IInstantiateProvider>(), _services.GetService<IStaticDataService>(),
                 _services.GetService<IRandomService>(), _services.GetService<IPersistentProgressService>(),
                 _services.GetService<IWindowService>()));
+            
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), _services.GetService<IGameFactory>()));
             _services.RegisterService<IUIFactory>(new UIFactory

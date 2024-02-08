@@ -5,6 +5,7 @@ using Infrastructure.Services;
 using Infrastructure.Services.Persistent;
 using Infrastructure.Services.Persistent.SaveLoad;
 using StaticData;
+using UI.Services.Factory;
 
 namespace Infrastructure.States {
     public class GameStateMachine {
@@ -15,9 +16,15 @@ namespace Infrastructure.States {
             _state = new Dictionary<Type, IExitableState>{
                 [typeof(BootStrapState)] = new BootStrapState(this, sceneLoader, services),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain, 
-                    services.GetService<IGameFactory>(), services.GetService<IPersistentProgressService>(), services.GetService<IStaticDataService>()),
+                    services.GetService<IGameFactory>(), 
+                    services.GetService<IPersistentProgressService>(), 
+                    services.GetService<IStaticDataService>(), 
+                    services.GetService<IUIFactory>()),
+                
                 [typeof(LoadProgressState)] = new LoadProgressState(this,
-                    services.GetService<IPersistentProgressService>(), services.GetService<ISaveLoadService>()),
+                    services.GetService<IPersistentProgressService>(),
+                    services.GetService<ISaveLoadService>()),
+                
                 [typeof(GameNewLoopState)] = new GameNewLoopState(this)
             };
         }

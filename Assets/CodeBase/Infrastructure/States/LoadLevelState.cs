@@ -3,11 +3,9 @@ using Hero;
 using Infrastructure.Factory;
 using Infrastructure.Services.Persistent;
 using UnityEngine;
-using Infrastructure.States;
-using Logic;
 using StaticData;
-using UI;
 using UI.Elements;
+using UI.Services.Factory;
 using UnityEngine.SceneManagement;
 
 namespace Infrastructure.States {
@@ -20,16 +18,18 @@ namespace Infrastructure.States {
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _persistentProgressService;
         private readonly IStaticDataService _staticDataService;
+        private IUIFactory _uiFactory;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain curtain,
             IGameFactory gameFactory, IPersistentProgressService persistentProgressService,
-            IStaticDataService staticDataService){
+            IStaticDataService staticDataService, IUIFactory uiFactory){
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _curtain = curtain;
             _gameFactory = gameFactory;
             _persistentProgressService = persistentProgressService;
             _staticDataService = staticDataService;
+            _uiFactory = uiFactory;
         }
 
         public void Enter(string sceneName){
@@ -43,9 +43,14 @@ namespace Infrastructure.States {
         }
 
         private void OnLoaded(){
+            InitUIRoot();
             InitGameWorld();
             InformProgressReaders();
             _gameStateMachine.EnterGeneric<GameNewLoopState>();
+        }
+
+        private void InitUIRoot(){
+            _uiFactory.CreateRoot();
         }
 
         private void InitGameWorld(){
