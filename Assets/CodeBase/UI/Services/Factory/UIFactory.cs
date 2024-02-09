@@ -1,5 +1,6 @@
 ﻿using Infrastructure.AssetsManagement;
 using StaticData;
+using StaticData.Windows;
 using UI.Services.Windows;
 using UnityEngine;
 

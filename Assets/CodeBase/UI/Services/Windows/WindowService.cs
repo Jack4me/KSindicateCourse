@@ -1,4 +1,5 @@
 ﻿using UI.Services.Factory;
+using UnityEngine;
 
 namespace UI.Services.Windows {
     public class WindowService : IWindowService {
@@ -8,6 +9,8 @@ namespace UI.Services.Windows {
             _uiFactory = uiFactory;
         }
         public void OpenWindow(WindowIdEnum windowIdEnum){
+            
+MonoBehaviour.print("ERROR");
             switch (windowIdEnum){
                 case WindowIdEnum.Unknown:
                     break;

@@ -1,27 +1,29 @@
-﻿using System;
-using UI.Services;
+﻿using UI.Services;
 using UI.Services.Windows;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI.Elements {
     public class OpenWindowButton : MonoBehaviour {
-        public Button WindowOpen;
+        public Button ButtonOpen;
         public WindowIdEnum WindowIdEnum;
         private IWindowService _windowService;
 
         public void Construct(IWindowService windowService){
             _windowService = windowService;
-            
+            if (_windowService!=null){
+                MonoBehaviour.print("ERROR");
+
+            }
         }
 
         private void Awake(){
-            WindowOpen.onClick.AddListener(Open);
+            ButtonOpen.onClick.AddListener(Open);
         }
 
         private void Open(){
-            _windowService.OpenWindow(WindowIdEnum);
+             _windowService.OpenWindow(WindowIdEnum);
         }
+        
     }
 }

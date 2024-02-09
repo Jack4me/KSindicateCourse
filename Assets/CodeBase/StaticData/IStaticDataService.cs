@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Services;
+using StaticData.Windows;
 using UI.Services;
 using UI.Services.Windows;
 
@@ -7,6 +8,6 @@ namespace StaticData {
         void Load();
         MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId);
         LevelStaticData ForLevel(string sceneNameKey);
-        WindowConfig ForWindow(WindowIdEnum shop);
+        WindowConfig ForWindow(WindowIdEnum windowId);
     }
 }

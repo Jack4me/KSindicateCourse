@@ -1,10 +1,8 @@
 ﻿using System;
-using UI;
-using UI.Services;
 using UI.Services.Windows;
 using UI.Windows;
 
-namespace StaticData {
+namespace StaticData.Windows {
     [Serializable]
     public class WindowConfig {
         public WindowIdEnum WindowId;
