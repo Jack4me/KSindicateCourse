@@ -10,7 +10,7 @@ namespace UI.Services.Windows {
         }
         public void OpenWindow(WindowIdEnum windowIdEnum){
             
-MonoBehaviour.print("ERROR");
+
             switch (windowIdEnum){
                 case WindowIdEnum.Unknown:
                     break;

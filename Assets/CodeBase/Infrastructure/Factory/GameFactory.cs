@@ -34,6 +34,7 @@ namespace Infrastructure.Factory {
             _random = random;
             _persistentProgressService = persistentProgressService;
             _windowService = windowService;
+            
         }
 
         public GameObject CreateHero(GameObject at){
@@ -83,7 +84,9 @@ namespace Infrastructure.Factory {
         public GameObject CreateHud(){
             var hud = InstantiateRegister(AssetPath.HUD_PATH);
            hud.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.WorldData);
+           
            foreach (OpenWindowButton openWindowButton in hud.GetComponentsInChildren<OpenWindowButton>()){
+              
                openWindowButton.Construct(_windowService);
            } 
            return hud;

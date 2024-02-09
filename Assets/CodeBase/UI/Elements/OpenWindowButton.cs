@@ -10,11 +10,12 @@ namespace UI.Elements {
         private IWindowService _windowService;
 
         public void Construct(IWindowService windowService){
+            
             _windowService = windowService;
-            if (_windowService!=null){
-                MonoBehaviour.print("ERROR");
-
-            }
+            // if (_windowService==null){
+            //     MonoBehaviour.print("ERROR");
+            //
+            // }
         }
 
         private void Awake(){

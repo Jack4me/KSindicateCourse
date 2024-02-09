@@ -25,6 +25,8 @@ namespace Infrastructure.States {
             _sceneLoader = sceneLoader;
             _services = services;
             RegisterServices();
+
+            
         }
 
         public void Enter(){
@@ -42,24 +44,26 @@ namespace Infrastructure.States {
             _services.RegisterService<IInputService>(RegisterInputServices());
             _services.RegisterService<IPersistentProgressService>(new PersistentProgressService());
            
+            _services.RegisterService<IUIFactory>(new UIFactory(
+                _services.GetService<IInstantiateProvider>(),
+                _services.GetService<IStaticDataService>()));
+            
+            _services.RegisterService<IWindowService>(new WindowService(
+                _services.GetService<IUIFactory>()));
+            
             _services.RegisterService<IGameFactory>
             (new GameFactory(
                 _services.GetService<IInstantiateProvider>(),
                 _services.GetService<IStaticDataService>(),
                 _services.GetService<IRandomService>(),
                 _services.GetService<IPersistentProgressService>(),
-                _services.GetService<IWindowService>()));
-            
+                _services.GetService<IWindowService>()
+                ));
+                   
             _services.RegisterService<ISaveLoadService>(new SaveLoadService(
                 _services.GetService<IPersistentProgressService>(), 
                 _services.GetService<IGameFactory>()));
             
-            _services.RegisterService<IUIFactory>(new UIFactory(
-                _services.GetService<IInstantiateProvider>(),
-                _services.GetService<IStaticDataService>()));
-            
-            _services.RegisterService<WindowService>(new WindowService(
-                _services.GetService<IUIFactory>()));
         }
 
         private void RegisterStaticData(){

@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe08cf1d4f81429abc0b7d7045a6aa66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WindowOpen: {fileID: 4711006519737081287}
+  ButtonOpen: {fileID: 4711006519737081287}
   WindowIdEnum: 1
 --- !u!1001 &6474190016181972313
 PrefabInstance:
