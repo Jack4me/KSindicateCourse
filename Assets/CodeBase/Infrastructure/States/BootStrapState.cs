@@ -46,7 +46,8 @@ namespace Infrastructure.States {
            
             _services.RegisterService<IUIFactory>(new UIFactory(
                 _services.GetService<IInstantiateProvider>(),
-                _services.GetService<IStaticDataService>()));
+                _services.GetService<IStaticDataService>(), 
+                _services.GetService<IPersistentProgressService>()));
             
             _services.RegisterService<IWindowService>(new WindowService(
                 _services.GetService<IUIFactory>()));
