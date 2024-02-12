@@ -19,6 +19,8 @@ namespace UI.Windows {
 
         private void Awake() => OnAwake();
 
+        protected virtual void OnAwake() => CloseButton.onClick.AddListener(() => Destroy(gameObject));
+       
         private void Start(){
             Initialize();
             SubscribeUpdate();
@@ -28,7 +30,6 @@ namespace UI.Windows {
             CleanUp();
         }
 
-        protected virtual void OnAwake() => CloseButton.onClick.AddListener(() => Destroy(gameObject));
 
         protected virtual void Initialize(){
         }

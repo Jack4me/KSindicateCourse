@@ -8,6 +8,4 @@ namespace StaticData.Windows {
         public WindowIdEnum WindowId;
         public WindowBase Prefab;
     }
-    
-    
 }
