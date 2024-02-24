@@ -29,6 +29,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -113,6 +114,7 @@
       <workItem from="1708604692653" duration="1358000" />
       <workItem from="1708607721502" duration="20000" />
       <workItem from="1708697469988" duration="786000" />
+      <workItem from="1708770878235" duration="612000" />
     </task>
     <servers />
   </component>
