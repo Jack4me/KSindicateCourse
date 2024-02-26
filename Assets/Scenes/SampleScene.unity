@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f704bebdb074af49e32a81004db7820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngleX: 42.44
+  RotationAngleX: 50
   distance: 7
   offsetY: 1
   following: {fileID: 0}
