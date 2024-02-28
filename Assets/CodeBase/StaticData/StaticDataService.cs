@@ -11,7 +11,7 @@ namespace StaticData {
     public class StaticDataService : IStaticDataService {
         private Dictionary<MonsterTypeId, MonsterStaticData> _monsters;
         private Dictionary<string, LevelStaticData> _levels;
-        private Dictionary<WindowIdEnum, WindowConfig> _windowConfig;
+        private Dictionary<WindowIdEnum, WindowConfigData> _windowConfig;
 
         public StaticDataService([NotNull] Dictionary<MonsterTypeId, MonsterStaticData> monsterStaticDatas){
             _monsters = monsterStaticDatas ?? throw new ArgumentNullException(nameof(monsterStaticDatas));
@@ -48,9 +48,9 @@ namespace StaticData {
                
         }
 
-        public WindowConfig ForWindow(WindowIdEnum windowId){
+        public WindowConfigData ForWindow(WindowIdEnum windowId){
             // return _windowConfig.TryGetValue(windowId, out WindowConfig windowConfig) ? windowConfig : null;
-            bool tryGetValue = _windowConfig.TryGetValue(windowId, out WindowConfig windowConfig);
+            bool tryGetValue = _windowConfig.TryGetValue(windowId, out WindowConfigData windowConfig);
             return tryGetValue ? windowConfig : null;
         }
     }

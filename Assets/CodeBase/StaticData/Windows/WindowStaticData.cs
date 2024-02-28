@@ -6,6 +6,6 @@ namespace StaticData {
     [CreateAssetMenu(menuName = "StaticData/ Window Static Data", fileName = "Window Static Data")]
     public class WindowStaticData : ScriptableObject 
     {
-        public List<WindowConfig> ConfigsList;
+        public List<WindowConfigData> ConfigsList;
     }
 }

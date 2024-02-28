@@ -4,7 +4,7 @@ using UI.Windows;
 
 namespace StaticData.Windows {
     [Serializable]
-    public class WindowConfig {
+    public class WindowConfigData {
         public WindowIdEnum WindowId;
         public WindowBase Prefab;
     }

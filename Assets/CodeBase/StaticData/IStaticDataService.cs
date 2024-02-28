@@ -8,6 +8,6 @@ namespace StaticData {
         void Load();
         MonsterStaticData DataForMonsters(MonsterTypeId monsterTypeId);
         LevelStaticData ForLevel(string sceneNameKey);
-        WindowConfig ForWindow(WindowIdEnum windowId);
+        WindowConfigData ForWindow(WindowIdEnum windowId);
     }
 }

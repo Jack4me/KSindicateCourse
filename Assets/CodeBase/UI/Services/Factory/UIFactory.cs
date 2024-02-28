@@ -23,7 +23,7 @@ namespace UI.Services.Factory {
         }
 
         public void CreateShop(){
-            WindowConfig shop = _staticData.ForWindow(WindowIdEnum.Shop);
+            WindowConfigData shop = _staticData.ForWindow(WindowIdEnum.Shop);
             WindowBase window = Object.Instantiate(shop.Prefab, _uiRoot);
             window.Construct(_progress);
         }
