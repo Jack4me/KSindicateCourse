@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UI.Services.Windows {
     public class WindowService : IWindowService {
-        public readonly IUIFactory _uiFactory;
+        private readonly IUIFactory _uiFactory;
 
         public WindowService(IUIFactory uiFactory){
             _uiFactory = uiFactory;
