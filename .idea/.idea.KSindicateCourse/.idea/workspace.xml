@@ -11,6 +11,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/be/fe3817fe/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7fe3f96a6d704e1eaaf6ef514c2f5a513400/39/5061ef95/JsonUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/Collaborate/UserInterface/Bootstrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Utilities/ResourceReloader.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -121,7 +124,9 @@
       <workItem from="1717927098047" duration="6361000" />
       <workItem from="1718000564316" duration="5316000" />
       <workItem from="1718093225382" duration="10750000" />
-      <workItem from="1718177974339" duration="6093000" />
+      <workItem from="1718177974339" duration="6475000" />
+      <workItem from="1718266006495" duration="10998000" />
+      <workItem from="1718355767844" duration="2521000" />
     </task>
     <servers />
   </component>

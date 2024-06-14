@@ -95,6 +95,7 @@ namespace Infrastructure.Factory {
         public void CleanUp(){
             ProgressReaders.Clear();
             ProgressWriters.Clear();
+          
         }
 
         private GameObject InstantiateRegister(string path, Vector3 position){
