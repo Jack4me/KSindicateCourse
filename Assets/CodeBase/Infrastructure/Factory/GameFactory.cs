@@ -52,7 +52,7 @@ namespace Infrastructure.Factory {
             monster.GetComponent<AgentMoveToPlayer>().SetHeroTransform(HeroGameObject.transform);
             monster.GetComponent<NavMeshAgent>().speed = dataForMonsters.MoveSpeed;
             monster.GetComponent<RotateToHero>()?.SetHeroTransform(HeroGameObject.transform);
-            var lootSpawner = monster.GetComponentInChildren<LootSpawner>();
+            LootSpawner lootSpawner = monster.GetComponentInChildren<LootSpawner>();
             lootSpawner.SetLoot(dataForMonsters.MaxLoot, dataForMonsters.MaxLoot);
             lootSpawner.Constract(this, _random);
             
